@@ -83,20 +83,21 @@
 // HINT: Module Operator
 // */
 
-
-    // const check3and7 = function (num){
-        
-    //     subOfSeven =  num % 7;
+// const check3and7 = function(num) {
+//         if(num>0){
+//       if (num % 3 == 0 || num % 7 == 0) 
+//       {
+//        console.log("Its multiple of 3 or 7");
+//         return true;
+//       } 
+//       else {
+//         return false;
+//       }
+//     }else{
+//         return "wrong number";
+//     }
+//     }
     
-    //     if(subOfSeven === 0){
-             
-    //          return(`${num} is a multiple of 7`);
-    //     }else{
-    //         return(`${num} is not a multiple of 7`);
-    //     }
-
-    // }
-  
     //     console.log(check3and7(14));
 //shife me vone
 /* EXERCISE 7
@@ -116,29 +117,40 @@ a given string (es.: Strive => evirtS).
 Write a function "upperFirst" to capitalize the first letter of each word of a 
 given string passed as parameter
 */
-const upperFirst = function(S2){
+// const upperFirst = function(S2){
     
-    var splitStr = S2.toLowerCase().split(' ');
-    for (let i = 0; i < splitStr.length; i++) {
-        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-    }
-    return splitStr.join(' '); 
- }
- console.log(upperFirst("hello from the other side"));
+//     var splitStr = S2.toLowerCase().split(' ');
+//     for (let i = 0; i < splitStr.length; i++) {
+//         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+//     }
+//     return splitStr.join(' '); 
+//  }
+//  console.log(upperFirst("hello from the other side"));
 
  /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and 
 last character of a given string.
 */
-const cutString = function(S3){
+// const cutString = function(S3){
     
-    let splitString2 = S3.split("");
-    const Arrary = splitString2;
-  let a =Arrary.slice(1,length-1);
+//     let splitString2 = S3.split("");
+//     const Arrary = splitString2;
+//   let a =Arrary.slice(1,length-1);
   
 
-    return a;
+//     return a;
 
+// }
+// console.log(cutString("hello from albania"));
+
+/* EXERCISE 10
+Write a function "giveMeRandom" which accepts a number n and 
+returns an array containing n random numbers between 0 and 10
+*/
+const giveMeRandom = function( n){
+    for( let i = 0; i<n; i++ ){
+        console.log(Math.floor(Math.random()+i));
+        
+    }
 }
-console.log(cutString("hello from albania"));
-
+console.log(giveMeRandom(5));
