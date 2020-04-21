@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Accessing Elements in the DOM</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+        color: #333;
+      }
+      body {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      div,
+      article {
+        padding: 10px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <input id="name" type="text" onkeydown="keyPressed(event)" />
+    </div>
+    <div>
+      <input id="email" type="email" />
+    </div>
+    <div>
+      <input id="saveButton" type="button" value="save data!" onclick="getUserData()" />
+    </div>
+    <script>
+      function getUserData() {
+        let name = document.querySelector('#name').value
+        let email = document.querySelector('#email').value
+        if (name && email.includes('@')) {
+          console.log('name is', name)
+          console.log('email is', email)
+          // alert(name + ' ' + email)
+          let userDiv = document.createElement('div')
+          userDiv.innerText = 'you inputted ' + name + ' and ' + email
+          document.querySelector('body').appendChild(userDiv)
+          document.querySelector('#name').value = ''
+          document.querySelector('#email').value = ''
+        }
+      }
+      function keyPressed(e) {
+        console.log('a key has been pressed!')
+        console.log(e)
+        if (e.key === '#') {
+          alert('the # char is not allowed!')
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <script>
+      /* EXERCISE 1
+            Write a function to change the document title of the page in something else
+            */
+    
+      
+  
+      function changeTitle(newTitle){
+        document.title = "hello this is my title"
+
+      }
+
+      /* EXERCISE 2
+            Write a function to change the class of the H1 on a page in "myHeading"
+            */
+
+      function addClassToHeading() {
+        let x = document.querySelector("#");
+        x.classList = 'myHeading';
+      }
+
+      /* EXERCISE 3
+            Write a function to change the text of only the p which are child of a div
+            */
+
+            function changePcontent() {
+let z = document.querySelectorAll("div p")
+for(let i=0; i<z.length; i++ ){
+z[i].innerText = "hello";
+      
+}
+      }
+
+
+      /* EXERCISE 4
+            Write a function to change the destination of every link to https://www.google.com
+            */
+
+      function changeUrls() {
+        let link =querySelector("a href");
+        link = "https://www.google.com"
+      }
+
+      /* EXERCISE 5
+            Write a function to add a new item ONLY to the second list
+            */
+
+      function addToTheSecond(content) {}
+
+      /* EXERCISE 6
+           Write a function to add a second paragraph to the div
+            */
+
+      function addParagraph(content) {}
+
+      /* EXERCISE 7
+           Write a function to make the first UL disappear
+            */
+
+      function firstUlDisappear() {}
+
+      /* EXERCISE 8
+            Write a function to make the background of every UL green
+            */
+
+      function paintItGreen() {}
+
+      /* EXERCISE 9
+            Make the heading of the page changing color every time the user clicks on it
+            */
+
+      function makeItClickable() {}
+
+      /* EXERCISE 10
+          Create a new welcome alert message when the page successfully loads
+            */
+
+      window.onload = function () {}
+
+      /* EXERCISE 11
+            Use HTML5 tags to divide sections, headers etc 
+            */
+    </script>
+
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div   >
+      <h1  class="titles">This is the title of the page</h1>
+      <h2 id="subtitle" class="t1">This is the subtitle of the page</h2>
+    </div>
+
+    <div>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="strive.school">This link goes to Strive School</a>
+
+      <div > 
+  
+        <p >This text is just for the exercise</p>
+      </div>
+    </div>
+
+    <div>
+      <p class=>And this text is just for the exercise too!</p>
+    </div>
+  </body>
+</html>

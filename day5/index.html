@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Accessing Elements in the DOM</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+        color: #333;
+      }
+      body {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      div,
+      article {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #dedede;
+      }
+      .newClass {
+        font-size: 30px;
+      }
+      .genericClass {
+        background-color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Accessing Elements in the DOM</h1>
+
+    <h2>ID (#demo)</h2>
+    <div id="demoContainer">
+      <div id="demo">
+        <p>Access me by ID</p>
+      </div>
+    </div>
+    <input type="button" onclick="replicate()" value="REPLICATE" />
+
+    <h2>Class (.demo)</h2>
+    <div class="demo">
+      Access me by class (1)
+    </div>
+    <div class="demo">Access me by class (2)</div>
+
+    <h2>Tag (article)</h2>
+    <div id="articleContainer">
+      <article>Access me by tag (1)</article>
+      <article>Access me by tag (2)</article>
+    </div>
+    <input type="button" onclick="createArticle()" value="CREATE" />
+
+    <h2>Query Selector</h2>
+    <div id="demo-query">Access me by query</div>
+
+    <h2>Query Selector All</h2>
+    <div class="demo-query-all">Access me by query all (1)</div>
+    <div class="demo-query-all">Access me by query all (2)</div>
+
+    <h2>A more complex query</h2>
+    <div id="more-complex">
+      <ul>
+        <li>
+          First element inside a list
+        </li>
+        <li>
+          Second element inside a list
+        </li>
+        <li>
+          Third element inside a list
+        </li>
+      </ul>
+    </div>
+    <a href="/inputs.html"> GO TO INPUTS</a>
+    
+    <script>
+      window.onload = function () {
+        let demoParagraph = document.querySelector('#demo p')
+        console.log(demoParagraph)
+        demoParagraph.innerText = 'the changed!'
+        document.querySelector('#demo p').innerText = 'changed ahbkgain!!'
+        demoParagraph.style.color = 'red'
+        demoParagraph.classList.add('newClass')
+        demoParagraph.classList.remove('newClass')
+      }
+      function replicate() {
+        let demo = document.querySelector('#demo')
+        let demo2 = demo.cloneNode(true)
+        let demoContainer = document.querySelector('#demoContainer')
+        demoContainer.appendChild(demo2)
+      }
+      function createArticle() {
+        let random = Math.random() * 11
+        random = Math.floor(random)
+        let myNewArticle = document.createElement('article')
+        myNewArticle.innerText = "I've been created from scratch! " + random
+        myNewArticle.style.color = 'red'
+        myNewArticle.classList.add('genericClass')
+        myNewArticle.onclick = function (e) {
+          console.log('you clicked me!!')
+          console.log('EVENT INFO', e)
+        }
+        // element is completed but I need to attach it somewhere
+        let parent = document.querySelector('#articleContainer')
+        parent.appendChild(myNewArticle)
+      }
+    </script>
+  </body>
+</html>
