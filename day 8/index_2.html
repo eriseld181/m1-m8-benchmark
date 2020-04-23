@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap" />
+    <style>
+      body {
+        background-color: #292929;
+        color: white;
+        font-family: 'Nunito', sans-serif;
+        max-width: 768px;
+        margin: 0 auto;
+      }
+
+      #calendar {
+        width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid white;
+      }
+
+      .day {
+        display: inline-block;
+        width: 150px;
+        text-align: center;
+        min-height: 100px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #ef3d59;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      #addMeeting {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #addMeeting div {
+        text-align: center;
+      }
+
+      input {
+        background-color: #ef3d59;
+        color: white;
+        border: 0;
+        padding: 10px;
+        font-weight: bold;
+      }
+
+      ::placeholder {
+        color: white;
+      }
+
+      .selected {
+        border: 1px solid white;
+      }
+
+      .selected h3 {
+        font-weight: bolder;
+      }
+
+      #appointments {
+        display: none;
+      }
+
+      ul {
+        padding: 0;
+        list-style-type: none;
+      }
+
+      li {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .withEvent {
+        color: #ef3d59;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calendar</h1>
+    <div id="calendar">
+      <!-- day cells will be inserted here -->
+    </div>
+    <h1>Add Meeting</h1>
+    <!-- add event form sections -->
+    <div id="addMeeting">
+      <div>
+        <h4>Meeting Day</h4>
+        <h4 id="newMeetingDay">Click on a Day</h4>
+      </div>
+      <div>
+        <h4>Meeting Time</h4>
+        <input type="time" id="newMeetingTime" />
+      </div>
+      <div>
+        <h4>Meeting Name</h4>
+        <input type="text" id="newMeetingName" placeholder="Insert a name for the meeting" />
+      </div>
+      <div>
+        <h4>Add</h4>
+        <input type="button" value="Save Meeting" onclick="saveMeeting()" />
+      </div>
+    </div>
+    <div id="appointments">
+      <h1>Appointments for the day!</h1>
+      <ul id="appointmentList">
+        <!-- this will receive appointments via js -->
+      </ul>
+    </div>
+
+    <script>
+      var appointments = []
+      /* appointments is like:
+        [
+        ]
+  */
+
+      window.onload = function () {
+        var numberOfDays = daysInThisMonth() // 30 in April
+        console.log('this is the value of numberOfDays', numberOfDays)
+        var calendar = document.querySelector('#calendar') // getting a reference for the calendar div
+
+        for (let i = 0; i < numberOfDays; i++) {
+          appointments[i] = [] // here I'm creating a spot for each day I'm looping, and assign that to an empty array
+          /* appointments is like:
+        [
+          [], [], [], [], [],
+          [], [], [], [], [],
+          [], [], [], [], [],
+          ...
+        ]
+      */
+          let child = document.createElement('div') // this will create an empty day cell
+          child.className = 'day' // assigning the CSS class
+
+          child.onclick = function (event) {
+            //event handler for the click, the event parameter holds some info about it and the cell I've clicked on
+            let selected = document.querySelector('.selected') // here I'm searching for already selected days in the calendar
+            if (selected) {
+              // if I found one, I remove its 'selected' class, resetting the situation
+              selected.className = selected.className.replace(' selected', '')
+            }
+            // now we don't have for sure any selected element
+            event.currentTarget.className += ' selected' // only now I'm adding the selected class to the target of the event (the day I've clicked on)
+
+            document.querySelector('#newMeetingDay').innerText = i + 1 // here I change the text 'Click on a Day' with the current day
+
+            let todaysAppointments = appointments[i] // finding the appointments for the day in the appointments array
+            if (todaysAppointments.length > 0) {
+              // if we have any event for that day
+              showAppointments(i + 1) // invoking showAppointments passing the day of the month as the parameter
+            } else {
+              // if we DON'T have any event for that day
+              document.querySelector('#appointments').style.display = 'none' // hide the appointments sections
+            }
+          }
+
+          let day = document.createElement('h3') // let's create the title for the cell, empty
+          let dayOfTheMonth = i + 1
+          day.innerText = dayOfTheMonth // let's assign to that title the current index + 1 (the day number)
+
+          child.appendChild(day) // appends the title to the cell
+          calendar.appendChild(child) // appends the cell to che calendar
+        }
+      }
+
+      function daysInThisMonth() {
+        let now = new Date()
+        return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate() // returns the number of days in the current month
+      }
+
+      function saveMeeting() {
+        let meetingDay = document.querySelector('#newMeetingDay').innerText // grabs the day in the newMeetingDay h4
+        let meetingTime = document.querySelector('#newMeetingTime') // grabs the time from the input
+        let meetingName = document.querySelector('#newMeetingName') // grabs the meeting name from the input
+
+        let calendar = document.querySelector('#calendar') // getting a reference for the calendar div
+        let dayCell = calendar.children[parseInt(meetingDay) - 1] // finding the current cell from the calendar children
+
+        dayCell.classList.add('withEvent') // adds a CSS class to that particular cell (day now becomes red)
+
+        console.log('EVENT JUST CREATED: ', meetingDay, meetingTime.value, meetingName.value)
+
+        appointments[parseInt(meetingDay) - 1].push(meetingTime.value + ' - ' + meetingName.value) // pushes the event in the right spot in the appointments array
+
+        meetingTime.value = '' // resets the time input
+        meetingName.value = '' // resets the meeting name input
+
+        // console.log('APPOINTMENTS', appointments)
+        showAppointments(parseInt(meetingDay)) // shows the appointments for the currently selected day (passes the meetingDay as an integer as a parameter)
+      }
+
+      function showAppointments(day) {
+        // receives the day from the code, so it knows which portion of the appointments array needs to be taken (which day)
+        let todaysAppointments = appointments[day - 1]
+        // now todaysAppointments is the array containing the events for the day passed
+        document.querySelector('#appointments').style.display = 'block' // sets the appointments section to be visible!
+        let appointmentList = document.querySelector('#appointmentList') // here I target the unordered list in html
+        appointmentList.innerHTML = '' // and here to be sure I erase any old trace
+
+        for (let i = 0; i < todaysAppointments.length; i++) {
+          // for every event in that day...
+          let li = document.createElement('li') // create an empty list element
+          li.innerHTML = todaysAppointments[i] // sets the content for it with the correct event in todaysAppointments
+          appointmentList.appendChild(li) // appends the newly created list element to the unordered list!
+        }
+      }
+    </script>
+  </body>
+</html>

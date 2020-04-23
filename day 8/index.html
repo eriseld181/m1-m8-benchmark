@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Calendar</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap"/>
+   <style>
+       body{
+           background-color: #292929;
+           color: white;
+           font-family: 'Nunito', Arial, sans-serif;
+           max-width: 768px;
+           margin: 0 auto;
+
+       }
+       #calendar{
+           width: 100%;
+           margin-bottom: 20px;
+           border: 1px solid white;
+           
+       }
+       .day{
+           display: inline-block;
+           width: 150px;
+           text-align:center ;
+           min-height: 100px;
+           
+       }
+       h1{
+        text-align:center ;
+       }
+       #addMeeting{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+
+       }
+       #addMeeting div {
+           text-align: center;
+
+       }
+       input{
+           background-color: #ef3d59;
+           color: white;
+           border: 0;
+           padding: 10px;
+           font-weight: bold;
+       }
+       ::placeholder{
+           color:white;
+       }    
+       .selected{
+           border: 1px solid white;
+       }   /*esht vendosur nga google, dhe nqs do te marresh nje font nga google duhet ta fusesh ne ""*/
+   </style>
+    </head>
+<body>
+    <h1>Calendar</h1>
+    <div id ="calendar">
+
+    </div>
+    <h1>add meeting</h1>
+    <div id="newMeeting">
+<div>
+    <h4>Meeting day</h4>
+    <h4 id="newMeetingDay">cick on a day</h4>
+
+</div>
+<div>
+    <h4>meeting time</h4>
+    <input type ="time" id="newMeetingTime"/>
+</div>
+
+   
+
+
+    </div>
+    <script>
+        window.onload = function(){
+            var numberOfDays = daysInThisMonth();//30 days bc of april month
+            var calendar = document.querySelector('#calendar')
+            for(let i = 0; i <numberOfDays; i++ ){
+                let child = document.createElement('div')
+                child.className ="day"
+
+                child.onclick = function(event){
+                    let selected = document.querySelector('.selected')
+                    if(selected){
+                        selected.className = selected.className.replace(' selected', '')
+
+                    }//ben reset cdo element qe ta zgjedhim mos te kemi shum te zgjedhura
+                    event.currentTarget.className +=' selected'
+                   document.querySelector('#newMeetingDay').innertext = i+1
+                }
+
+                let day = document.createElement('h3')
+                let dayOfTheMonth = i + 1
+                day.innerHTML = dayOfTheMonth
+
+                child.appendChild(day)
+                calendar.appendChild(child)
+            }
+
+
+            function daysInThisMonth(){
+                let now = new Date();
+                return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()//tere kjo me tregon ditet e prillit
+
+            }
+            function saveMeeting(){
+                let meetingDay = document.querySelector('#newMeetingDay').innertext
+                let meetingTime = document.querrySelector('#newMeetingTime')
+                let meetingName = document.querrySelector('#newMeetingName')
+                console.log(meetingName, meetingTime, meetingName )
+
+                meetingName.value = ''
+                meetingName.value = ''
+            }
+
+        }
+    </script>
+     
+</body>
+</html>

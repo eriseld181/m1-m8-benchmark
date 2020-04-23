@@ -1,0 +1,68 @@
+ <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted 
+        on the bingo board
+
+        EXTRA: 
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Bingo</title>
+        </head>
+ <style>
+     body {
+        background-color: #292929;
+        color: white;
+        font-family: 'Nunito', sans-serif;
+        max-width: 768px;
+        margin: 0 auto;
+      }
+      h1{text-align: center;}
+
+      h2{text-align: center; color: red;}
+
+ </style>
+  <body>
+    <h1>Bingo</h1>
+    <h2>Choose a number to become the winner of bingo </h2>
+    <div id="bingo">
+      <!-- bingo cells will be inserted here -->
+    </div>
+    <script>
+         window.onload = function () {
+             var totalBingoNumbers = 76;
+             console.log('this is the value of bingo numbers', totalBingoNumbers)
+             var bingo = document.querySelector('#bingo')
+
+            for (let i = 0; i < totalBingoNumbers; i++) {
+                let child = document.createElement('div') 
+                child.className = 'bingoNumbers' 
+
+                child.onclick = function (event) {
+                    let selected = document.querySelector('.selected')
+                    if (selected) {
+              // if I found one, I remove its 'selected' class, resetting the situation
+              selected.className = selected.className.replace(' selected', '')
+            }
+            event.currentTarget.className += ' selected'
+
+         }
+
+         let bingoNumbers = document.createElement('h3') 
+         let dayOfTheMonth = i + 1
+         bingoNumbers.innerText = numberCells 
+
+         child.appendChild(bingoNumbers)
+         bingo.appendChild(child)
+
+
+         }}
+    </script>
+  </body>
+</html>
