@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <title>Strive Calculator</title>
+        <style>
+            body{
+                background: #181818;
+            }
+            #calculator{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            input[type=button]{
+                font-size: 60px;
+                width: 100px;
+                height: 100px;
+            }
+           
+            #result{
+                font-size: 50px;
+                text-align: right;
+             width: 100%;  
+             max-width: 420px; 
+            }
+            .numericButton{
+                background-color: #ef3d59;
+               
+            }
+            .functionButton{
+                background-color: #cf4421;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="calculator">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" id="result" value="0" disabled />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="numericButton" value="7" />
+                    </td>
+                    <td>
+                        <input type="button" class="numericButton" value="8" />
+                    </td>
+                    <td>
+                        <input type="button"class="numericButton" value="9" />
+                    </td>
+                            <td>
+                                <input type="button" class="functionButton"  value="*" />
+                            </td>
+                   </tr>
+                   <tr>
+                    <td>
+                        <input type="button" class="numericButton" value="4" />
+                    </td>
+                    <td>
+                        <input type="button"class="numericButton" value="5" />
+                    </td>
+                    <td>
+                        <input type="button" class="numericButton" value="6" />
+                    </td>
+                            <td>
+                                <input type="button" class="functionButton" value="+" />
+                            </td>
+                   </tr>
+                   <tr>
+                    <td>
+                        <input type="button"class="numericButton"  value="1" />
+                    </td>
+                    <td>
+                        <input type="button" class="numericButton" value="2" />
+                    </td>
+                    <td>
+                        <input type="button"class="numericButton"  value="3" />
+                    </td>
+                            <td>
+                                <input type="button" class="functionButton" value="-" />
+                            </td>
+                   </tr>
+                   <tr>
+                    <td>
+                        <input type="button" class="functionButton" value="C" />
+                    </td>
+                    <td>
+                        <input type="button" value="0" />
+                    </td>
+                    <td>
+                        <input type="button" class="functionButton" value="=" />
+                    </td>
+                            <td>
+                                <input type="button" class="functionButton" value="/" />
+                            </td>
+                   </tr>
+            </table>
+
+        </div>
+        <script>
+            window.addEventListener('DOMContentLoaded',
+            function(){
+                 console.log('DOM LOADED');
+                 //memory of our calculator
+                 let operation ="";
+                 let previousResult = 0;//first operand
+
+                //create the functions for: sum, div, sub, diff 
+                const mul = function(x,y){
+                    return x * y;
+                }
+                 const sum = function(x,y){
+                     return x + y;
+                 }
+                 const diff = function(x,y){
+                     return x - y;
+                    }
+                const div = function(x,y){
+                        return x / y;
+                }
+                
+                    const numericButtonPressed = function(event){
+                        const numericButtonPressed = event.target.value;
+                     console.log(numericButtonPressed);
+
+                     const result = document.getElementById("result");
+                     if (result.value === '0'){
+
+                         result.value = numericButtonPressed; 
+                     }else{
+                        result.value += numericButtonPressed;
+                     }   
+                 }
+                 //what does this function do?
+                 
+                 const functionButtonPressed = function(event){
+                 const keyPressed = event.target.value;
+                 console.log(keyPressed);
+                 const result = document.getElementById("result");
+                 
+                 switch (keyPressed){
+                    case "=": //compute and display the result
+                    switch (operation){
+                        case "+":
+                            result.value = sum (previousResult, parseFloat(result.value));
+                            break;
+                            case "-":
+                            result.value = diff (previousResult, parseFloat(result.value));
+                            break;
+                            case "*":
+                            result.value = mul (previousResult, parseFloat(result.value));
+                            break;
+                            case "/":
+                            result.value = div (previousResult, parseFloat(result.value));
+                            break;
+                    
+                    default: 
+                    console.log('default case');
+
+
+                 }
+                 break;
+
+                 case "C": //reset everything
+                 console.log("i'm the button C");
+                 result.value = "0";
+                 previousResult = 0;
+                 break;
+                 default:
+                     console.log('KEY PRESSED',keyPressed )
+                     previousResult = parseFloat(result.value);//saving first operand
+                     operation = keyPressed;// saving operation selected
+                     result.value = "0";//reset to 0 to let the user type second operand
+                }
+            }
+            
+            
+                 //adding functionalities to buttons
+                 const numericButton = document.getElementsByClassName("numericButton");
+                 const functionButton = document.getElementsByClassName("functionButton");
+                 for(let button of numericButton){
+                     button.addEventListener('click ', numericButtonPressed)
+                 }
+            })
+        </script>
+        
+    </body>
+</html>

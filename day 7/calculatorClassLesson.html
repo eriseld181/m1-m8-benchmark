@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <title>Strive Calculator</title>
+    <style>
+        body {
+            background: #181818;
+        }
+
+        #calculator {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input[type=button] {
+            font-size: 60px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #result {
+            font-size: 60px;
+            text-align: right;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .numericButton {
+            color: #ef3d59
+        }
+
+        .functionButton {
+            background-color: #ef3d59;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+  
+    <div id="calculator">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="result" value="0" disabled />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="numericButton" value="7" />
+                </td>
+                <td>
+                    <input type="button" class="numericButton" value="8" />
+                </td>
+                <td>
+                    <input type="button" class="numericButton" value="9" />
+                </td>
+                <td>
+                    <input type="button" class="functionButton" value="*" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="numericButton" value="4" />
+                </td>
+                <td>
+                    <input type="button" class="numericButton" value="5" />
+                </td>
+                <td>
+                    <input type="button" class="numericButton" value="6" />
+                </td>
+                <td>
+                    <input type="button" class="functionButton" value="-" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="numericButton" value="1" />
+                </td>
+                <td>
+                    <input type="button" class="numericButton" value="2" />
+                </td>
+                <td>
+                    <input type="button" class="numericButton" value="3" />
+                </td>
+                <td>
+                    <input type="button" class="functionButton" value="+" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="functionButton" value="C" />
+                </td>
+                <td>
+                    <input type="button" class="numericButton" value="0" />
+                </td>
+                <td>
+                    <input type="button" class="functionButton" value="=" />
+                </td>
+                <td>
+                    <input type="button" class="functionButton" value="/" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM LOADED')
+            // MEMORY OF OUR CALCULATOR
+            let operation = ""
+            let previousResult = 0 // FIRST OPERAND
+
+            const sum = function (x, y) {
+                return x + y
+            }
+            // const sum = (x,y) => x+y
+
+            const diff = function (x, y) {
+                return x - y
+            }
+
+            const mul = function (x, y) {
+                return x * y
+            }
+            const div = function (x, y) {
+                return x / y
+            }
+
+            const numericButtonPressed = function (event) {
+                const numberPressed = event.target.value;
+                console.log(numberPressed);
+                const result = document.getElementById("result");
+
+                if (result.value === '0') {
+                    result.value = numberPressed
+                } else {
+                    result.value = result.value + numberPressed
+                }
+            }
+
+            const functionButtonPressed = function (event) {
+                const keyPressed = event.target.value
+                console.log(keyPressed)
+                const result = document.getElementById("result")
+               
+                switch (keyPressed) {
+                    case "=": // compute and display the result
+                        switch (operation) { // switch between + - / *
+                            case "+":
+                                // first operand + second operand --> result.value
+
+                                result.value = sum(previousResult, parseFloat(result.value))
+                                break;
+                            case "-":
+
+                                result.value = diff(previousResult, parseFloat(result.value))
+                                break;
+                            case "*":
+
+                                result.value = mul(previousResult, parseFloat(result.value))
+                                break;
+                            case "/":
+
+                                result.value = div(previousResult, parseFloat(result.value))
+                                break;
+                            default:
+                                console.log('Default case')
+
+                        }
+                        break;
+                    case "C": // resetting everything
+                        console.log("I'm the C button")
+                        result.value = "0"
+                        previousResult = 0
+                        break;
+                    default:
+                        console.log('KEY PRESSED: ', keyPressed)
+                        previousResult = parseFloat(result.value) // saving first operand
+                        operation = keyPressed // saving operation selected
+                        result.value = "0" // reset to zero to let the user type second operand
+                }
+
+            }
+
+            // ADDING FUNCTIONALITIES TO BUTTONS
+
+            const numericButtons = document.getElementsByClassName("numericButton")
+
+            const functionButtons = document.getElementsByClassName("functionButton")
+
+            for (let button of numericButtons) {
+                button.addEventListener('click', numericButtonPressed)
+            }
+
+            for (let button of functionButtons) {
+                button.addEventListener('click', functionButtonPressed)
+            }
+
+
+        })
+
+
+        function test() {
+
+           console.log("test")
+        }
+    </script>
+</body>
+
+</html>
