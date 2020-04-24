@@ -84,7 +84,8 @@ li {text-align: left;}
      7) Add a link for every image
      8) Divide the page using a horizontal line-->
         <h1>This is a table</h1>
-        <table border="1" class="border">
+        <table border="1" class="border"
+        id="table" >
 <!--ROW 1 -->
             <tr  > 
                 <td >1</td>
@@ -122,7 +123,7 @@ li {text-align: left;}
         </tr>
         </table>
         <!--9) Create a container with a nested paragraph and a nested unordered list-->
-    <div> 
+    <div  id="container"> 
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <p> Aenean commodo ligula eget dolor.</p>
             <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p> </p>
@@ -137,8 +138,33 @@ li {text-align: left;}
     </div>
     <!--10) Create a footer with some information about the page creator-->
     <footer><p>this page was created from Eriseld Kosta</p></footer>
-    <script>
-       alert();
+    <script src="50exams.js">
+
+        /*  -31) Get element with ID "container" from the page*/
+         document.getElementById("container");
+
+       /*- 32) Get every "td" from the page*/  
+      document.getElementsByTagName("td");
+    
+      /*- 33) Create a cycle that prints the text inside every td of the page*/
+      let m = document.querySelectorAll('td')
+      for(let i = 0; i<m.length; i++){
+          console.log(m[i].textContent)
+      }
+      /*- 34) Write a function to change the heading of the page*/
+      document.title = "i have changed the heading lol";
+
+      /*-35) Write a function to add an extra row to the table*/
+    
+     let table = document.getElementById("table")
+      let addRow = document.createElement("tr"); 
+      let addText = document.createTextNode("new row");
+      addRow.appendChild(addText);  
+      table.appendChild(addRow);
+      
+      /*-36) Write a function to add the class "test" to reach row in the table*/
+     
+     
     </script>
     </body>
   
