@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day
+- You can ask for tutor's help
+- You can google / use StackOverflow BUT we suggest you to use just the material provided
+- To test the page, just open it with your default browser.
+- Use Bootstrap4 classes to render the page.
+- Use correctly containers and rows in order to have a great display
+
+ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you'd like to have 1. 
+a short bio of yourself, 
+2.the top albums of your life, 
+3.the worst album you ever listen to and everything related to the music you love.
+
+NOTE:
+Most of the time, even the most expert of designers, need inspiration.
+Spend 30 minutes surfing the web and searching for the way of rapresenting album that you like the most.
+Could be the Amazon way, the Spotity or Apple music way or some other blog out there.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .albumContainer{
+            background-color:#0F1F26;
+        }
+        .albumCover{}
+        .albumTitle{
+            color:#03B8F7 !important;
+        }
+        .albumGroup{
+            color: #f6f6f6 !important;
+        }
+        .albumGenre{
+            color:#03B8F7 !important;
+        }
+        .albumDuration{
+            color: #f6f6f6 !important;
+        }
+
+      /* EXERCISE 1
+            For all Albums we'd like to have a consistent style.
+            Create a class for:
+            - The album container--> div
+            - The album cover img
+            - The album title h1
+            - The album group / singer / --> dj name
+            - The album genre --> title
+            - The album duration--> p
+            - etc
+         */
+        
+
+      /* EXERCISE 2 
+            Based on the artists you like the most, create a combination of colors 
+            to override bootstrap standard and make your website unique
+         */
+    </style>
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Eriseld Website</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">About Me <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#">My Favourite Singers <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Albums
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+       
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+          
+</div>
+<div class="container albumContainer">
+    <div class="row">
+    <div class="albumContainer col col-sm-2">
+        <img src="eminem.jpg" alt="">
+        <h3 class="albumTitle">Kamikaze</h3>
+        <h5 class="albumGroup">Studio: Effigy Studios</h5>
+        <h5 class="albumGenre">Genre: Hip hop</h5>
+        <h5 class="albumDuration">Length: 45:49</h5>
+    </div>
+    </div>
+    
+<div class="container ">
+    <div class="row">
+    <div class="albumContainer  col  col-sm-2">
+        <img src="eminem.jpg" alt="">
+        <h3 class="albumTitle">Kamikaze</h3>
+        <h5 class="albumGroup">Studio: Effigy Studios</h5>
+        <h5 class="albumGenre">Genre: Hip hop</h5>
+        <h5 class="albumDuration">Length: 45:49</h5>
+    </div>
+    </div>
+    <div class="row">
+        <div class="albumContainer  col-sm-2">
+            <img src="eminem.jpg" alt="">
+            <h3 class="albumTitle">Kamikaze</h3>
+            <h5 class="albumGroup">Studio: Effigy Studios</h5>
+            <h5 class="albumGenre">Genre: Hip hop</h5>
+            <h5 class="albumDuration">Length: 45:49</h5>
+        </div>
+        </div>
+    
+    
+  </div>
+  <body>
+    <!-- EXERCISE 3 
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must be linked to every section in your page
+        -->
+
+    <!-- EXERCISE 4
+            Create a Responsive section for your favourite albums.
+            In this section you should have:
+            - 4 albums per row when the screen is very large
+            - 3 albums per row when you are on a tablet (or a smaller window)
+            - 2 albums per row when you are on a small screen
+        -->
+
+    <!-- EXERCISE 5
+            Create a section for the album review.
+            Pick one of your fav albums, and create a section with:
+            - Cover
+            - Title
+            - Band
+            - Lenght
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+
+    <!-- EXERCISE 6
+            Worst album list! Find out the music you don't really like or you find overrated and list it
+            in this "hall of shame" chart!
+        -->
+
+    <!-- EXERCISE 7
+            Do you have any musician / band you admire or you are fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+
+    <!-- EXERCISE 8
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
+            Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
+        -->
+
+    <!-- EXERCISE 9
+            Implement a footer with some information / social links
+        -->
+
+    <!-- EXERCISE 10
+            Every time the user clicks on a album picture, toggle the album details
+        -->
+
+    <!-- EXERCISE 11
+            Add a button to each section. By clicking on it the section appears (if hidden) or disappears (if visible)
+        -->
+
+    <!--
+            EXERCISE 12
+            Add in the footer a field that counts, on page load, how many ALBUMS are on the page 
+        -->
+        
+  </body>
+</html>

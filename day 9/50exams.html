@@ -155,12 +155,12 @@ li {text-align: left;}
       document.title = "i have changed the heading lol";
 
       /*-35) Write a function to add an extra row to the table*/
-    
+    function newRow(){
      let table = document.getElementById("table")
       let addRow = document.createElement("tr"); 
       let addText = document.createTextNode("new row");
       addRow.appendChild(addText);  
-      table.appendChild(addRow);
+      table.appendChild(addRow);}
       
       /*-36) Write a function to add the class "test" to reach row in the table*/
      
