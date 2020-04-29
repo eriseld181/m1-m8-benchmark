@@ -28,21 +28,49 @@ Could be the Amazon way, the Spotity or Apple music way or some other blog out t
     <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
+      body{
+        background-color:#f6f6f6;
+        text-align: center;
+        
+      }
+      
         .albumContainer{
-            background-color:#0F1F26;
+            background-color:#f6f6f6;
         }
-        .albumCover{}
+        .albumCover{
+          height: 50%;
+          width: auto;
+        }
         .albumTitle{
+          font-size: large !important;
             color:#03B8F7 !important;
+            text-align: left;
+            margin: 0 0 0 20px;
+            
         }
         .albumGroup{
+          font-size: medium !important;
             color: #f6f6f6 !important;
+            text-align: left;
+            margin: 0 0 0 20px;
         }
         .albumGenre{
+          font-size: medium !important;
             color:#03B8F7 !important;
+            text-align: left;
+            margin: 0 0 0 20px;
         }
         .albumDuration{
+          font-size: small !important;
             color: #f6f6f6 !important;
+            text-align: left;
+            margin: 0 0 0 20px;
+        }
+        .colContainer{
+          background-color:  #0F1F26;
+          
+          margin: 20px;
+          padding: 10px 0 0 0 ;
         }
 
       /* EXERCISE 1
@@ -99,39 +127,47 @@ Could be the Amazon way, the Spotity or Apple music way or some other blog out t
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
-  </nav>
+  </nav><!--End of menu bar-->
           
-</div>
-<div class="container albumContainer">
-    <div class="row">
-    <div class="albumContainer col col-sm-2">
-        <img src="eminem.jpg" alt="">
-        <h3 class="albumTitle">Kamikaze</h3>
-        <h5 class="albumGroup">Studio: Effigy Studios</h5>
-        <h5 class="albumGenre">Genre: Hip hop</h5>
-        <h5 class="albumDuration">Length: 45:49</h5>
-    </div>
-    </div>
-    
-<div class="container ">
-    <div class="row">
-    <div class="albumContainer  col  col-sm-2">
-        <img src="eminem.jpg" alt="">
-        <h3 class="albumTitle">Kamikaze</h3>
-        <h5 class="albumGroup">Studio: Effigy Studios</h5>
-        <h5 class="albumGenre">Genre: Hip hop</h5>
-        <h5 class="albumDuration">Length: 45:49</h5>
-    </div>
-    </div>
-    <div class="row">
-        <div class="albumContainer  col-sm-2">
-            <img src="eminem.jpg" alt="">
-            <h3 class="albumTitle">Kamikaze</h3>
+
+<div class="container albumContainer" >
+
+    <div class="row" style="outline: solid blue 2px solid !important;"><!--first row-->
+        <div class="colContainer col-xs-12 col-md-3 col-lg-2">
+            <img class="albumCover" src="eminem.jpg" alt="">
+            <h3 class="albumTitle">Album: Kamikaze</h3>
             <h5 class="albumGroup">Studio: Effigy Studios</h5>
             <h5 class="albumGenre">Genre: Hip hop</h5>
             <h5 class="albumDuration">Length: 45:49</h5>
-        </div>
-        </div>
+        </div> <!--close the first col-->
+        <div class="colContainer  col-xs-12 col-md-3 col-lg-2">
+          <img class="albumCover" src="eminem.jpg" alt="">
+          <h3 class="albumTitle">Kamikaze</h3>
+          <h5 class="albumGroup">Studio: Effigy Studios</h5>
+          <h5 class="albumGenre">Genre: Hip hop</h5>
+          <h5 class="albumDuration">Length: 45:49</h5>
+      </div> <!--close the second col-->
+      <div class="colContainer col-xs-12 col-md-3 col-lg-2">
+        <img class="albumCover" src="eminem.jpg" alt="">
+        <h3 class="albumTitle">Kamikaze</h3>
+        <h5 class="albumGroup">Studio: Effigy Studios</h5>
+        <h5 class="albumGenre">Genre: Hip hop</h5>
+        <h5 class="albumDuration">Length: 45:49</h5>
+    </div> <!--close the third col-->
+    <div class="colContainer col-xs-12 col-md-3 col-lg-2">
+      <img  class="albumCover"src="eminem.jpg" alt="">
+      <h3 class="albumTitle">Kamikaze</h3>
+      <h5 class="albumGroup">Studio: Effigy Studios</h5>
+      <h5 class="albumGenre">Genre: Hip hop</h5>
+      <h5 class="albumDuration">Length: 45:49</h5>
+  </div> <!--close the 4 col-->
+
+    </div><!--close the first row-->
+      
+               
+    
+
+   
     
     
   </div>

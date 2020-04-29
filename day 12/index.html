@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+
+        ASSIGNMENT RULES
+        - This is exercise should be done in couples
+        - Implement one exercise each
+        - We suggest you to use Slack or Google Hangouts to speak to each other
+
+        - The solution must be pushed to the repository and be available for the tutors by the end of the day
+        - You can ask for tutor's help
+        - You can google / use StackOverflow BUT we suggest you to use just the material provided
+        - To test the page, just open it with your default browser.
+        - Use Bootstrap4 classes to render the page.
+        - Use correctly containers and rows in order to have a great display
+
+
+        You are implementing a website for a Travel Agency.
+        In the page you can add all the destination you'd like to go in the next future!
+
+
+        Ex 1) Implement a navigation bar, connected to all the sections of the page. 
+      
+        Ex 2) Add a logo into the navigation bar 
+        Ex 3) Add a Jumbotron section in which you present name and claim of the tour operator
+        Ex 4) Implement the "Deal of the Week" section. In this section you'll display 4 destinations.
+         In this section you should have:
+            - 4 destinations per row when the screen is very large
+            - 3 destinations per row when you are on a tablet (or a smaller window)
+            - 2 destinations per row when you are on a small screen
+
+        Ex 5) Implement the "Welcome Summer" section. In this section you'll propose 6 destinations
+            In this section you should have:
+                - 6 destinations per row when the screen is very large
+                - 3 destinations per row when you are on a tablet (or a smaller window)
+                - 2 destinations per row when you are on a small screen
+        
+        Ex 6) Implement a "Deal of the day" section. In this section you'll have:
+            - 66% of the page with a picture of the destination
+            - 33% with Name, dates, price and a short description
+
+        Ex 7) Make the "Deal of the day" section disappear when the user is mobile
+        Ex 8) Add to the Welcome Summer destinations a large shadow
+        Ex 9) Create a section Last Minute, in which you'll display the pictures from the destinations as Cards
+        Ex 10) Create a "Testimonial" section, in which the user can find several feedback from fake customers
+        Ex 11) Create a footer with the company information and a button "contact us"
+
+        Ex 11) Create a button next to each section to collapse and reopen the given section
+        Ex 12) Create a method that counts the number of "travels" on the page
+        Ex 13) Create a modal view with a message and a email field
+        Ex 14) When the user clicks on "contact us" the modal is displayed
+        Ex 15) Create a function that adds a "HOT" badge to all the "Welcome Summer" offers
+        Ex 16) Create a function to delete all "cards" from the page
+      -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body{
+        text-align: center;
+        margin: auto;
+      }
+      .navbar{
+        margin-top: 0!important;
+      }
+      .logo{
+        width: 150px;
+        height: auto;
+      }
+      .videoCover{
+        margin-top: -60px;
+        margin-bottom: 0;
+        
+      }
+  
+
+    </style>
+  </head>
+  <body>
+ 
+
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><img src="myTravel.png" class="logo"  alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#jumbotron">jumbotron <span class="sr-only">(current)</span></a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="#DealoftheWeek">Deal of the Week</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#WelcomeSummer">Welcome Summer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#DealoftheWeek">Deal of the Week</a>
+          </li>
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="embed-responsive embed-responsive-16by9 ">
+      
+      <iframe class="videoCover" width="560" height="315" src="https://www.youtube.com/embed/vr0qNXmkUJ8?controls=0&autoplay=1&loop=1&mute=1&modestbranding=1&autohide=1&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div> 
+
+    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+      <div class="container">
+        <h1 class="display-4">MyTravel</h1>
+        <p class="lead">If you want to have a wonderful travel - call us!</p>
+      </div>
+    </div>
+    <h1 id="DealoftheWeek">Deal of the Week</h1>
+    <div class="container">
+      <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+        <div class="col mb-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go to Paris</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go to Paris</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col mb-4 ">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go to Paris</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4 ">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">o to Paris</a>
+            </div>
+          </div>
+          </div>
+          <div class="col mb-4 ">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">o to Paris</a>
+              </div>
+            </div>
+            </div>
+            <div class="col mb-4 ">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">o to Paris</a>
+                </div>
+              </div>
+              </div>
+      </div>
+    </div>
+    <hr>
+
+    <h1 id="WelcomeSummer">Welcome Summer</h1>
+    <div class=".container ">
+      <div class="row row-cols-2  row-cols-sm-2 row-cols-md-3 row-cols-lg-6">
+        <div class=".col-lg-2	">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go to Paris</a>
+            </div>
+          </div>
+        </div>
+        <div class=".col-lg-2">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go to Paris</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class=".col-lg-2">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go to Paris</a>
+            </div>
+          </div>
+        </div>
+
+        <div class=".col-lg-2">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">o to Paris</a>
+            </div>
+          </div>
+          </div>
+
+          <div class=".col-lg-2">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go to Paris</a>
+              </div>
+            </div>
+          </div>
+
+          <div class=".col-lg-2">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go to Paris</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="row row-cols-2  row-cols-sm-2 row-cols-md-2 row-cols-lg-2"">
+    <div class=".col-lg-3">
+      <div class="card" style="width: 18rem;">
+        
+        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Card title</h5>
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          
+        </div>  </div>
+    
+
+    <div class=".col-lg-9">
+      
+        <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+        
+         
+       
+     
+    </div>
+</div>
+
+
+    <!--Ex 6) Implement a "Deal of the day" section. In this section you'll have:
+            - 66% of the page with a picture of the destination
+            - 33% with Name, dates, price and a short description-->
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
