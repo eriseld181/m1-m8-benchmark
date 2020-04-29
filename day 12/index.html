@@ -63,6 +63,28 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+      $("#news-slider").owlCarousel({
+          items : 3,
+          itemsDesktop:[1199,2],
+          itemsDesktopSmall:[980,2],
+          itemsMobile: [600, 1],
+          navigation : false,
+          pagination:false,
+          autoPlay : true
+      });
+  });
+    </script>
     <style>
       body{
         text-align: center;
@@ -74,13 +96,130 @@
       .logo{
         width: 150px;
         height: auto;
+      
       }
       .videoCover{
-        margin-top: -60px;
+       margin-top:-60px;
         margin-bottom: 0;
         
       }
-  
+      .title-color{
+        color: #0F586C;
+      }
+      .post-slide{
+    padding: 0 15px;
+}
+.demo
+{
+	padding: 100px 0;
+}
+.heading-title
+{
+	margin-bottom: 100px;
+}
+.post-slide .post-img{
+    overflow: hidden;
+}
+
+.post-slide .post-img img{
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.9;
+    transform: scale(1,1);
+    transition:all 0.3s ease-in-out 0s;
+}
+
+.post-slide:hover .post-img img{
+    transform: scale(1.2,1.2);
+    filter:none;
+    opacity:1;
+}
+
+.post-slide .post-content{
+    padding: 20px 30px;
+    position: relative;
+    background: #fff;
+}
+
+.post-slide .post-date{
+    min-width:28px;
+    min-height:28px;
+    line-height: 28px;
+    text-align: center;
+    background: #556677;
+    position: absolute;
+    top: -30px;
+    left: 30px;
+}
+
+.post-slide .month{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 10px;
+    background: #14bf9b;;
+    text-transform: uppercase;
+}
+
+.post-slide .date{
+    color: #fff;
+    font-size: 14px;
+}
+
+.post-slide .post-title{
+    margin: 20px 0;
+}
+
+.post-slide .post-title a{
+    color:#14bf9b;
+    font-size:22px;
+    text-transform:capitalize;
+    transition: all 0.50s ease 0s;
+}
+
+.post-slide .post-title a:hover{
+    color:#333;
+    text-decoration: none;
+}
+
+.post-slide .post-description{
+    color: #999;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.post-slide .post-bar{
+    padding: 15px 0;
+    list-style: none;
+    text-align: center;
+    background: #14bf9b;
+}
+
+.post-slide .post-bar li{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.post-slide .post-bar li a{
+    text-transform: capitalize;
+    font-size: 12px;
+    color: #fff;
+    transition:0.2s ease;
+}
+
+.post-slide .post-bar li a:hover{
+    text-decoration: none;
+    color:#333;
+}
+
+.post-slide .post-bar li i{
+    color:#fff;
+    margin-right: 5px;
+}
+/* CSS Document */
+
 
     </style>
   </head>
@@ -123,172 +262,163 @@
       <iframe class="videoCover" width="560" height="315" src="https://www.youtube.com/embed/vr0qNXmkUJ8?controls=0&autoplay=1&loop=1&mute=1&modestbranding=1&autohide=1&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div> 
 
-    <div class="jumbotron jumbotron-fluid" id="jumbotron">
+    <div class="jumbotron jumbotron-fluid" id="jumbotron" style="color:white; background-color: #0F586C;">
       <div class="container">
         <h1 class="display-4">MyTravel</h1>
         <p class="lead">If you want to have a wonderful travel - call us!</p>
       </div>
     </div>
-    <h1 id="DealoftheWeek">Deal of the Week</h1>
+    <h1 id="DealoftheWeek" style="color: #0F586C;">Deal of the Week</h1>
     <div class="container">
       <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-        <div class="col mb-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+        <div class="col-12 mb-4">
+          <div class="card ">
+            <img class="card-img-top" src="london.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title title-color">London</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go to Paris</a>
+              <a href="#" class="btn btn-primary">Find London Tickets</a>
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
+
+        <div class="col-12 mb-4">
+          <div class="card ">
+            <img class="card-img-top" src="hong-kong.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title  title-color">Hong Kong</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go to Paris</a>
+              <a href="#" class="btn btn-primary">Find Hong Kong Tickets</a>
             </div>
           </div>
         </div>
+       
       
         <div class="col mb-4 ">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+          <div class="card" >
+            <img class="card-img-top" src="berlin.jpg" alt="Card image cap">
+            <div class="card-body  title-color">
+              <h5 class="card-title">Berlin</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go to Paris</a>
+              <a href="#" class="btn btn-primary">Find Berlin Tickets</a>
             </div>
           </div>
         </div>
-        <div class="col mb-4 ">
-          <div class="card" style="width: 18rem;">
+        <div class="col mb-4 " >
+          <div class="card" >
             <img class="card-img-top" src="paris.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title title-color">Paris</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="btn btn-primary">o to Paris</a>
             </div>
           </div>
           </div>
-          <div class="col mb-4 ">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">o to Paris</a>
-              </div>
-            </div>
-            </div>
-            <div class="col mb-4 ">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">o to Paris</a>
-                </div>
-              </div>
-              </div>
+        
       </div>
     </div>
+
     <hr>
 
     <h1 id="WelcomeSummer">Welcome Summer</h1>
-    <div class=".container ">
-      <div class="row row-cols-2  row-cols-sm-2 row-cols-md-3 row-cols-lg-6">
-        <div class=".col-lg-2	">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go to Paris</a>
-            </div>
-          </div>
-        </div>
-        <div class=".col-lg-2">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go to Paris</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class=".col-lg-2">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go to Paris</a>
-            </div>
-          </div>
-        </div>
-
-        <div class=".col-lg-2">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">o to Paris</a>
-            </div>
-          </div>
+    <div class="demo" style="background: #eee;">
+      <div class="container">
+          <div class="row text-center">
+              <h1 class="heading-title"> Summer Hot Deals </h1>
           </div>
 
-          <div class=".col-lg-2">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go to Paris</a>
+          <div class="row">
+              <div class="col-md-12">
+                  <div id="news-slider" class="owl-carousel">
+                      <div class="post-slide">
+                          <div class="post-img">
+                              <a href="#" ><img src="london.jpg" alt=""></a>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-date">
+                                  <span class="month">apr</span>
+                                  <span class="date">10</span>
+                              </div>
+                              <h5 class="post-title"><a href="#">Latest News Post</a></h5>
+                              <p class="post-description">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
+                              </p>
+                          </div>
+                          <ul class="post-bar">
+                              <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
+                              <li> <i class="fa fa-comments"></i> <a href="#">2</a> </li>
+                              <li> <i class="fa fa-thumbs-up"></i> <a href="#">2 Likes</a> </li>
+                          </ul>
+                      </div>
+
+                      <div class="post-slide">
+                          <div class="post-img">
+                              <a href="#" ><img src="berlin.jpg" alt=""></a>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-date">
+                                  <span class="month">apr</span>
+                                  <span class="date">12</span>
+                              </div>
+                              <h5 class="post-title"><a href="#">Latest News Post</a></h5>
+                              <p class="post-description">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
+                              </p>
+                          </div>
+                          <ul class="post-bar">
+                              <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
+                              <li> <i class="fa fa-comments"></i> <a href="#">3</a> </li>
+                              <li> <i class="fa fa-thumbs-up"></i> <a href="#">5 Likes</a> </li>
+                          </ul>
+                      </div>
+
+                      <div class="post-slide">
+                          <div class="post-img">
+                              <a href="#" ><img src="paris.jpg" alt=""></a>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-date">
+                                  <span class="month">apr</span>
+                                  <span class="date">14</span>
+                              </div>
+                              <h5 class="post-title"><a href="#">Latest News Post</a></h5>
+                              <p class="post-description">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
+                              </p>
+                          </div>
+                          <ul class="post-bar">
+                              <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
+                              <li> <i class="fa fa-comments"></i> <a href="#">5</a> </li>
+                              <li> <i class="fa fa-thumbs-up"></i> <a href="#">7 Likes</a> </li>
+                          </ul>
+                      </div>
+
+                      <div class="post-slide">
+                          <div class="post-img">
+                              <a href="#" ><img src="hong-kong.jpg" alt=""></a>
+                          </div>
+                          <div class="post-content">
+                              <div class="post-date">
+                                  <span class="month">apr</span>
+                                  <span class="date">15</span>
+                              </div>
+                              <h5 class="post-title"><a href="#">Latest News Post</a></h5>
+                              <p class="post-description">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ipsum maxime recusandae repudiandae similique.
+                              </p>
+                          </div>
+                          <ul class="post-bar">
+                              <li> <i class="fa fa-users"></i> <a href="#">admin</a> </li>
+                              <li> <i class="fa fa-comments"></i> <a href="#">9</a> </li>
+                              <li> <i class="fa fa-thumbs-up"></i> <a href="#">8 Likes</a> </li>
+                          </ul>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-
-          <div class=".col-lg-2">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go to Paris</a>
-              </div>
-            </div>
           </div>
       </div>
-    </div>
+  </div>
 
-    <div class="row row-cols-2  row-cols-sm-2 row-cols-md-2 row-cols-lg-2"">
-    <div class=".col-lg-3">
-      <div class="card" style="width: 18rem;">
-        
-        <h5 class="card-title">Card title</h5>
-        <h5 class="card-title">Card title</h5>
-        <h5 class="card-title">Card title</h5>
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          
-        </div>  </div>
-    
-
-    <div class=".col-lg-9">
-      
-        <img class="card-img-top" src="paris.jpg" alt="Card image cap">
-        
-         
-       
-     
-    </div>
-</div>
 
 
     <!--Ex 6) Implement a "Deal of the day" section. In this section you'll have:
