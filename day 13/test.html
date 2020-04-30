@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+  <script type="text/javascript">
+
+document.getElementById("add").onclick = function() {
+
+    var text = document.getElementById("input").value; 
+    var li = "<li>" + text + "</li>";
+
+
+    document.getElementById("list").appendChild(li);
+}
+
+</script>
+
+<input type='text' id='input' />
+<input type='button' value='add to list' id='add' />
+
+<ul id='list'>
+  <li> <b>Topics</b></li> 
+  </ul>
+
+</body>
+</html>
