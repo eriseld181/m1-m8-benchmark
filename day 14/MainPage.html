@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: #221f1f;
+            color:#f5f5f1;
+            
+       
+            
+            
+        }
+        .navbar{
+            background-color: black;
+        }
+
+        h1{
+            font-size:18px;
+            margin-top: 20px;
+        }
+        h2{
+            font-size:18px;            
+            margin-top: 20px;
+            margin-left: -10px;
+            margin-bottom: 20px;
+            
+        }
+        .movie-tiles img{
+            max-height: 100%;
+            max-width:180px;
+            object-fit:cover;
+            margin-left: -10px;   
+            margin-top: 10px;   
+            
+            
+
+        }
+
+        .movie-tiles img:hover{
+        transform: scale(1.5);
+        }
+
+      
+        #foot{
+            margin-top: 100px;
+            font-size: 13px;
+            color:rgb(161, 161, 161);
+            
+            
+        }
+
+        .dropdown button{
+            background-color:black;
+            text-align: left;
+            margin-top: 13px;
+            
+        }
+
+        .dropdown .dropdown-menu {
+            background-color: black;
+            
+        }
+        
+        .dropdown-item{
+            color: white;
+        }
+
+        
+
+        .container{
+            margin-top: 15px;
+        }
+
+      
+        
+    </style>
+    <title>Netflix</title>
+
+  </head>
+
+
+  <body>
+
+   
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+
+        <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c529.png" height=50px>
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="MainPage.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="editprofile.html">Edit profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="account.html">Account information</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      
+
+    <div class="container">
+        <div class="row row-cols-6">          
+            <div class="col"><h1>TV Shows</h1></div>
+            <div class="col">
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Genres
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Thriller</a>
+                    <a class="dropdown-item" href="#">Drama</a>
+                  </div>
+                  </div>
+         </div>
+            
+    </div>
+    
+    <div class="main">
+    <div class="container movie-tiles">
+        <h2>Trending Now</h2>
+        <div class="row mb-3 row-cols-sm-1 row-cols-md-3 row-cols-lg-6">
+          <div class="col"><img src="https://cdn.collider.com/wp-content/uploads/2012/12/how-i-met-your-mother.jpg"alt=""></div>
+          <div class="col"><img src="https://i.redd.it/ee1un8atvyxz.png" ></div>
+          <div class="col"><img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABXhqqo4OEg9mbR3NvnhSrvk_4jCd_cY6FjBAwKx2z0anH6hw4L9tsIkm7oDtHYDcweBGUQhcq5rMencJFFE-HVoYzTuG.jpg?r=c4b" alt="" ></div>
+          <div class="col"><img src="https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABbm8tG0IoCc74ghZ7yI3JGUBAnp744yIWwo4ihmcc9cZs17ITTLwktngeffv1lkeET-FEJFOaO4NUlIVUyrSwddAFr1dIAM-CHOCIp_SlnGgHWJTqOcGz0koFbWusQ.jpg?r=bfa.jpg" alt=""></div>
+          <div class="col"><img src="https://www.whats-on-netflix.com/wp-content/uploads/2017/07/rick-and-morty-1.png" alt=""></div>
+          <div class="col"><img src="https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXvePVXYNZpqSyXRQCp8CJxkLY2NhAbEDnGEYjUepN63NxNl87-F6SLDcD_ghIdDkEUIZwXi-KFVs1bb7JXryST4Iert351p54mml7PjF3LzHUVKyS8oBHsl3g4W4Q.jpg?r=a77" alt=""></div>
+        </div>
+
+        <h2>Watch It Again</h2>
+
+        <div class="row  mb-3 row-cols-sm-1 row-cols-md-3 row-cols-lg-6">
+            <div class="col"><img src="https://occ-0-1068-1723.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABY0OhzKPscisflotqzXLPeE01Z96R38NWIY9pqk7l4aRlgaltVQIyF8O3wFzu9w0MFLzu1ePX26LPfWYU7g5i0-x81Op5Cz7Ngjtpj1iZndbC5z_O4ZvaJ7E45F56w.jpg?r=3a5"alt=""></div>
+            <div class="col"><img src="https://www.whats-on-netflix.com/wp-content/uploads/2018/11/narcos-mexico-season-2-netflix-renewal-release.jpg" ></div>
+            <div class="col"><img src="https://occ-0-987-990.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABZML-pA7Xu9q7Dpw82gf8w0UQAVtfHgJVNC4WuXjelmkaYXx-wp4wYazuT5eNOw_6BTgmbAgrv4KGc6xyj8IydbG11Ltni8g-r9CgHtrkVAzFvGJULwi.jpg?r=d89" alt="" ></div>
+            <div class="col"><img src="https://trendingnewsbuzz.com/wp-content/uploads/2020/01/Brooklyn-Nine-Nine-696x392.jpg" alt=""></div>
+            <div class="col"><img src="https://pmcdeadline2.files.wordpress.com/2017/03/louis-c-k-2017.png?w=1024" alt=""></div>
+            <div class="col"><img src="https://occ-0-1722-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABc55bv8oT90LdM7qLUMwRdbS9MoPzflc6Rxt7dAKm1IwTr4v12qfweVl4izfILtojn-RMHeoS_dwroTq75z5NeC_Pz6ng2Rx-c-qm0jLHc-Zj4Pd0YEg16yW_jQDTA.jpg?r=4df" alt=""></div>
+          </div>
+
+          <h2>New Releases</h2>
+
+          <div class="row  row-cols-sm-1 row-cols-md-3 row-cols-lg-6">
+            <div class="col"><img src="https://occ-0-990-987.1.nflxso.net/art/2c831/bf11f7d8e1168ff3ca23382fdcbf33ecc682c831.jpg"alt=""></div>
+            <div class="col"><img src="https://i.ytimg.com/vi/viUFB3Oitnk/maxresdefault.jpg" ></div>
+            <div class="col"><img src="https://i2.wp.com/popcornandtequila.com/wp-content/uploads/2019/09/AAAABQCLpIX9bR98mG6MPEEzsUHqAHQqKkJgu8JUykBCB6b0cqRQ-kgWsYMMcANntX1xxqAJ9-wQCc3EqKzVQwxCdiSTDY-7S9fmxTi2ABGEJz5hZjGbEEFT.jpg?resize=512%2C288&ssl=1" alt="" ></div>
+            <div class="col"><img src="https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcZYLTMVLSMQCL5WrpoOycBX7LEB42HgaIwNeeLVpO-vsqmkqPzaJoEZDHia_nsZzXobJJKm2sdrYAUu3y6_5KUln5WSk_E1rZS5Ks5mA-vLmQ0vCyn_-gevieFlSw.jpg?r=acf" alt=""></div>
+            <div class="col"><img src="https://occ-0-1722-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcgJk83DiaPPAVC0XVUG7CdeWMgATZP0LDZPFiejyW4GE5fRGhQpXbFXgds074VYKnhkcyYQb0Yvf3T9IDnle3FTvFpMo2oMlD6jiXHkkp3tyYt3oBWE0NIe5EGIIw.jpg?r=fda" alt=""></div>
+            <div class="col"><img src="https://occ-0-1722-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeygL-0gz8UMW02-oPX7u-ioEVZnVHMLL5aQmt_Ej333X-zx2crEzsZ7nnWL92CJQ4dnFuPjJ3kO-oP54251nBseexaOJLKzcUoH3-OmERYoMweOwklZIoupwhgkZQ.jpg?r=0d1" alt=""></div>
+          </div>
+      </div>
+
+      <footer id="foot">
+        <div class="container">
+            <img src="https://pngimage.net/wp-content/uploads/2018/06/social-media-icons-png-gray-2.png" height=50px>
+            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 row-col-4">
+              <div class="col">
+                Audio and Subtitles<br>
+                Media Center<br>
+                Privacy<br>
+                Contact Us<br>
+              </div>
+              <div class="col">
+                Audio Description<br>
+                Investor Relations<br>
+                Legal Notices<br>
+              </div>
+              <div class="col">
+                Help Center<br>
+                Jobs<br>
+                Cookie Preferences<br>
+              </div>
+              <div class="col">
+                  Gift Cards<br>
+                  Terms of Use<br>
+                  Corporate
+              </div>
+            
+          </div>
+          </div>
+      </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
