@@ -1,27 +1,7 @@
-
-    .container {
-    display: flex; 
-    justify-content:center;
-    border: 2px solid rgb(2, 46, 2);
-    border-radius: 20px;
-     background-color: green;
+.mydiv1{
+    display: flex;
+   
 }
-#mydiv1  {
-
-       
-height: 400px;
-text-align: center;
-margin: 0 auto;
-
-    }
-    mydiv1 .row .{ outline: solid red 2px;}
-    .container .row .col1 p{
-     width: 180px;
-        color: white;
-        outline: solid red 2px;
-        margin-top: 50%;
-        margin-bottom: 50%;
-        margin-left:auto ;
-        margin-right:auto ;
-    }
- 
+.row .col{
+    outline: solid blue 2px;
+}
