@@ -11,22 +11,43 @@
     <title>Artist Page!</title>
     <style>
       body{
-        background-color: black;}
-        .container .card{
-          background-color: black;
+        background-color: black;
         }
-     #imgBacground{
+        .card img{ padding: 3px;
+        
+        }
+        .container .card{
+          
+          background-color: black;
+          outline: solid blue 1px;
+          
+          
+        }
+        .card-title{font-size: 19px;
+        
+          outline: solid red 1px;
+          text-align: center;
+          }
+        .card-text{font-size: 15px;
+       
+          outline: solid green 1px;
+          text-align: center;
+          }
+
+        
+        .bolder{
+  color: white;
+  font-weight: 700;
+}
+     #imgBackground{
        background-image: url("./images/images.png");
        background-position: center;
        background-repeat: no-repeat;
        background-size: cover;
        height: 350px;
      }
-.bolder{
-  color: white;
-  font-weight: 700;
-}
-      #text_alg{
+
+  #text_alg{
         text-align: center;
      justify-content: center;
         margin: auto;
@@ -80,47 +101,41 @@
     }
     .btn3:hover{ 
       background-color: Transparent;
-      border: 2px solid green;}
+      border: 2px solid green;
+      }
  
-  
-    .card{
-    width: 70px;
-    text-align: center;
-    
-    
-    
-    }
     .img{
       width: 100%;
      
      height: 300px;
       background-size: cover;
     }
-.container .card img{
-  padding:10px;}
+
     </style>
   </head>
   <body>
     <div class="container" >
         <div class="row">
-          <div class="col col-2 d-flex ">
+          <div class="col col-2  ">
            menu
           </div>
 
-          <div class="col col-10  " ><!--artist div-->
+          <div class="col col-10 " ><!--artist div-->
          
             
-            <div class="container d-flex flex-column bolder justify-content-center  " id="imgBacground"><!--cover photo div-->
-              <div id="text_alg" class ="d-flex flex-column">
+            <div class=" d-flex  bolder justify-content-center  " id="imgBackground"><!--cover photo div-->
+              
+              <div id="text_alg" class =" flex-column">
                 <p>33.000 MONTHLY USERS</p>
                 <h1>Queen</h1>
-                <div class="container d-flex flex-row   justify-content-center" >
+
+                <div class="  flex-row  justify-content-center" >
                     <button type="button" class="btn btn-primary btn1">Play</button>
                     <button type="button" class="btn btn-outline-primary btn2" >Follow</button>
                     <button type="button" class="btn btn-outline-primary btn3"> <i class="fa" >&#xf141;</i> </button>
                 </div>
 
-                <div class="container menu bolder">
+                <div class=" menu bolder">
                   
                     <a href="artistPage.html">OVERVIEW</a>
                     <a href="artistPage.html">RELATED ARTISTS</a>
@@ -129,134 +144,169 @@
               </div class="d-flex">
             
             </div><!--end of cover photo div-->
-            <div class="container mt-3 bolder" >
-                <h4>Albums</h4>
+
+
+            
+           <div class="container mt-3  mb-3">
+            <div class="row  " >
+                <h4 class="bolder"> Albums</h4>
                 <hr>
             </div>
+          </div>
 
+            <div class="row bolder"><!--row class for songs-->
 
-           <div> <!--all cards for songs-->
-            <div class="container d-flex flex-row bolder"><!--row class for songs-->
-                <div class="row row-cols-6 d-flex cards ">
-            <div class="card " > <!--card no:1-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
+              <div class=" col-sm-6 col-md-4 col-lg-2 mb-5 ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
                 </div>
-              </div> <!--end of card no:1-->
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
+                </div>
+              </div>
 
-              <div class="card" > <!--card no:2-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
+              <div class=" col-sm-6 col-md-4 col-lg-2  ">
+              
+                <div class="card" >
+                  <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                   
+                      <div class="card-body" >
+                        <h6 class="card-title">Song title</h6>
+                        <p class="card-text " >Artist name</p>
+                   
+                  </div>
                 </div>
-              </div> <!--end of card no:2-->
-
-              <div class="card " > <!--card no:3-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:3-->
-
-              <div class="card" > <!--card no:4-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:4-->
-
-              <div class="card" > <!--card no:5-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:5-->
-
-              <div class="card" > <!--card no:6-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:6-->
-
-              <div class="card" > <!--card no:7-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:7-->
-
-              <div class="card" > <!--card no:8-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:8-->
-
-              <div class="card" > <!--card no:9-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:9-->
-
-              <div class="card" > <!--card no:10-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:10-->
-
-              <div class="card" > <!--card no:10-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:10-->
-              <div class="card" > <!--card no:10-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:10-->
-              <div class="card" > <!--card no:10-->
-                <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist name</p>
-                  
-                </div>
-              </div> <!--end of card no:10-->
-
+              </div>
+                
             </div><!--end of row class for songs-->
+         
 
             </div>
-           </div><!--end of all cards for songs-->
+           
             
           </div>
          
