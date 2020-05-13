@@ -23,12 +23,18 @@ body::-webkit-scrollbar {
     color: whitesmoke;
 }
 
-#menu {
+#menuOl{
+    padding-top: 1rem;
     list-style: none;
     font-weight: 500;
-    padding-top: 1rem;
-    padding-left: 10px;
+    padding-left: 0px;
+    
 }
+
+#menuOl li{
+    padding-left: 20px;
+}
+
 
 #menu2{
     position: absolute;
@@ -154,6 +160,9 @@ footer button {
 #icons{
     font-size: 15px;
 }
+#icons i{
+    padding: 0.5rem !important;
+}
 #icons #play{
     font-size: 25px;
 }
@@ -226,3 +235,29 @@ footer button {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.songNr{
+    display: none;
+}
+.checked {
+    color: #0de431;
+}
+
+@media only screen and (max-width: 600px) {
+    #menu,
+    .footer_hide {
+      display: none !important;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #menu{
+        display: none !important;
+    }
+    #menu col-10 .row{
+        width: 100vh;
+    }
+    #songs{
+        margin-left: 0;
+    }
+}
+

@@ -11,14 +11,146 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Spotify – Home</title>
     <link rel="icon" type="image/png" href="/photos/icon.png" />
+
+    <style>
+      body{
+        background-color: black;
+        }
+        .card img{ padding: 3px;
+
+        
+        }
+        .container .card{
+         
+          
+          background-color: black;
+          outline: solid blue 1px;
+          
+          
+        }
+        .card-body h6{
+          font-size: small;
+          text-align: center;
+          }
+
+          .card-body p{
+          font-size: medium!important;
+          text-align: center;
+          
+          text-align: center;
+        
+          }
+          .card-body{
+            background-color: black;
+           height: 120px;
+          
+          }
+
+        
+        .bolder{
+  color: white;
+  font-weight: 700;
+}
+     #imgBackground{
+       background-image: url("./images/images.png");
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       height: 350px;
+     }
+
+  #text_alg{
+        text-align: center;
+     justify-content: center;
+        margin: auto;
+       
+      }
+.menu{margin-top: 100px;}
+
+.menu a{color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  }
+
+/* h6{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+} */
+  .menu a:hover{
+  color: white;
+  border-bottom: green solid 3px ;
+  }
+
+  .btn{
+    margin-left: 10px!important;
+    border-radius: 25px;
+    color: white;
+    }
+    .btn1{
+      background-color: green;
+    border: 1px solid green;
+    width: 90px;
+    }
+    .btn2{
+      
+    border: 1px solid green;
+    width: 90px;
+    }
+    .btn3{
+      border: 1px solid green;
+    
+    }
+    
+    .btn1:hover{
+      background-color:green ;
+      border: 2px solid green;
+      font-size: 1.1em;
+      
+    }
+    .btn2:hover{
+      
+      border: 2px solid green;
+      font-size: 1.1em;
+      background-color: Transparent;
+    
+    }
+    .btn3:hover{ 
+      background-color: Transparent;
+      border: 2px solid green;
+      }
+ 
+    .img{
+      width: 100%;
+     
+     height: 300px;
+      background-size: cover;
+    }
+    .myAlbum{
+      max-height: 90vh;
+    overflow: auto;
+    padding-bottom: 10px;
+ }
+ #content{
+padding : 0 70px ;
+ }
+ .myAlbum::-webkit-scrollbar{
+display:none!important;
+ }
+  #content .card{
+   margin-top: 1rem !important;
+ }
+    </style>
+
   </head>
   <body>
       <div class="container-fluid">
           <div class="row">
-              <div class="col-2 black-bg">
+              <div id="menu" class="col-2 black-bg">
                 <div>
                   <img src="/photos/spotify.png" width="120px" height="40px"/>
-                  <ol id="menu">
+                  <ol id="menuOl">
                     <li><i class="fa fa-home pr-2"></i>Home</li>
                     <li><i class="fa fa-search pr-2"></i>Search</li>
                     <li><i class="fa fa-bookmark pr-2"></i>Your Library</li>
@@ -33,167 +165,212 @@
                   </div>
                 </div>
               </div>
-              <div class="col-10 gray-bg">
-                <div class="row">
-                  <div id="content" class="col-4 d-flex justify-content-end">
-                    <div class="card mt-5">
-                      <img src="/photos/musicToBeMurdered.jpg" height="250px"/>
-                      <p>Music to Be Murdered By</p>
-                      <label>Eminem</label>
-                      <button type="button" class="btn">PLAY</button>
-                      <label>2020 . 20 SONGS</label>
+
+              <div class="col col-10 myAlbum " ><!--artist div-->
+         
+            
+                <div class=" d-flex  bolder justify-content-center  " id="imgBackground"><!--cover photo div-->
+                  
+                  <div id="text_alg" class =" flex-column">
+                    <p>33.000 MONTHLY USERS</p>
+                    <h1>Queen</h1>
+    
+                    <div class="  flex-row  justify-content-center" >
+                        <button type="button" class="btn btn-primary btn1">Play</button>
+                        <button type="button" class="btn btn-outline-primary btn2" >Follow</button>
+                        <button type="button" class="btn btn-outline-primary btn3"> <i class="fa" >&#xf141;</i> </button>
                     </div>
-                  </div>
-                  <div id="songs" class="col">
-                    <div  class="card">
-                      <div class="selected">
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Premonition (Intro)</p>
-                          <p>2:54</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Unaccommodating</p>
-                          <p>3:37</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>You Gon’ Learn</p>
-                          <p>3:55</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Alfred (Interlude)</p>
-                          <p>0:30</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Those Kinda Nights</p>
-                          <p>2:58</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>In Too Deep</p>
-                          <p>3:15</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Godzilla</p>
-                          <p>3:31</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Darkness</p>
-                          <p>5:37</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Leaving Heaven</p>
-                          <p>4:26</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Yah Yah</p>
-                          <p>4:47</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Stepdad (Intro)</p>
-                          <p>0:15</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Stepdad</p>
-                          <p>3:34</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Marsh</p>
-                          <p>3:21</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Never Love Again</p>
-                          <p>2:58</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Little Engine</p>
-                          <p>2:57</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Lock It Up</p>
-                          <p>2:50</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Farewell</p>
-                          <p>4:08</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>No Regrets</p>
-                          <p>3:21</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>I Will</p>
-                          <p>5:03</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
-                      <div>
-                        <div class="d-flex justify-content-between">
-                          <p><i class="fa fa-music pr-3"></i>Alfred (Outro)</p>
-                          <p>0:39</p>
-                        </div>
-                        <label>Eminem</label>
-                      </div>
+    
+                    <div class=" menu bolder">
+                      
+                        <a href="artistPage.html">OVERVIEW</a>
+                        <a href="artistPage.html">RELATED ARTISTS</a>
+                        <a href="artistPage.html">ABOUT</a>
                     </div>
-                  </div>
+                  </div class="d-flex">
+                
+                </div><!--end of cover photo div-->
+    
+    
+                <div id="content">
+               <div class="container mt-3  ">
+                <div class="row  " >
+                    <h4 class="bolder pr-3"> Albums</h4>
+                    <hr>
                 </div>
               </div>
+    
+                <div class="row row-cols-2 row-cols-sm-2  row-cols-md-4 row-cols-lg-6 bolder "id="removeMarg"><!--row class for songs-->
+    
+                  <div  >
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Music to Be Murdered</h6>
+                            <p class="card-text " >Eminem</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="   ">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" ">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="   ">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="   ">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" ">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" ">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="">
+                  
+                    <div class="card mr-2" >
+                      <img src="https://via.placeholder.com/40" class="card-img-top" alt="...">
+                       
+                          <div class="card-body  d-flex justify-content-between flex-column" >
+                            <h6 class="card-title">Song title</h6>
+                            <p class="card-text " >Artist name</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                    
+                </div><!--end of row class for songs-->
+             
+    
+                </div>
+               
+                
+              </div>
+             
+            </div>
           </div>
+        </div>
+
+
+
+
+
+
+
+
+
           <footer>
             <div class="row light-gray-bg">
-              <div class="col-3 d-flex p-2 pl-2 align-center">
+              <div class="col-3 d-flex p-2 pl-2 align-center footer_hide">
                 <img src="/photos/song.png" width="45px" height="45px"/>
                 <div class="pb-0 mb-0">
                   <p id="songTitle" class="pl-3 p-0 m-0">Premonition (Intro)</p>
@@ -206,19 +383,19 @@
                 <div class="row-1">
                   <div id="icons" class="col d-flex justify-content-center align-center">
                     <button><i class="fa fa-random pr-2 pt-1"></i></button>
-                    <button><i class="fa fa-step-backward pr-2 pt-1"></i></button>
-                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay" src="/playList/Premonition (Intro).mp3"> </audio><i class="fa fa-play-circle pr-2"></i></button>
-                    <button><i class="fa fa-step-forward pr-2 pt-1"></i></button>
-                    <button><i class="fa fa-retweet pt-1"></i></button>
+                    <button onclick="playBack()"><i class="fa fa-step-backward pr-2 pt-1"></i></button>
+                    <button onclick="togglePlay()" id="play"><audio id="audio" src="/playList/Premonition (Intro).mp3"> </audio><i class="fa fa-play-circle pr-2"></i></button>
+                    <button onclick="playNext()"><i class="fa fa-step-forward pr-2 pt-1"></i></button>
+                    <button onclick="loop()" id="loop"><i class="fa fa-retweet pt-1"></i></button>
                   </div>
-                  <div class="col d-flex">
+                  <div class="col d-flex footer_hide">
                     <label>0:00</label>
                     <div class="progress-bar"><div class="middle-align progress-bar__bg"><div class="progress-bar__fg_wrapper"><div class="progress-bar__fg" style="transform: translateX(-100%);"></div></div><button aria-label="Change progress" class="middle-align progress-bar__slider" style="left: 0%;"></button></div></div>
                     <label id="songLength">2:54</label>
                   </div>
                 </div>
               </div>
-              <div class="col-3 d-flex p-2 pl-2 justify-content-end">
+              <div class="col-3 d-flex p-2 pl-2 justify-content-end footer_hide">
                 <i class="fa fa-bars ml-3 pt-3"></i>
                 <i class="fa fa-headphones ml-3 pt-3"></i>
                 <i class="fa fa-volume-up ml-3 pt-3"></i>
@@ -235,7 +412,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
       window.onload = function(){
-                var songs = document.querySelectorAll("#songs .card div")
+                var songs = document.querySelectorAll("#songs .card>div")
+                let menu = document.querySelectorAll("#menuOl li")
+
+                for(let i=0; i<menu.length;i++){
+                  menu[i].addEventListener("mouseover",function(){
+                    menu[i].style.borderLeft="4px solid green"
+                  })
+                  menu[i].addEventListener("mouseout",function(){
+                    menu[i].style.borderLeft=""
+                  })
+                }
 
                 for(let i=0; i<songs.length; i++){
 
@@ -244,7 +431,7 @@
                         if(selected){
                             selected.className = selected.className.replace(`selected`,``)
                         }
-                        event.currentTarget.className += ` selected`
+                        event.currentTarget.className += "selected"
                         let songName = document.querySelector(".selected .d-flex p").innerText
                         let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
 
@@ -257,7 +444,7 @@
                 }
             }
             var myAudio = document.getElementById("audio")
-            var isPlaying = true
+            var isPlaying = false
 
             function togglePlay() {
               if (isPlaying) {
@@ -274,6 +461,61 @@
               isPlaying = false;
               document.querySelector("#play i").classList="fa fa-play-circle pr-2"
             }
+            function playNext(){
+              let songs = document.querySelectorAll("#songs .card>div")
+              let selected = document.querySelector(".selected")
+              let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                            
+              if(selected){
+                nr+= 1
+                selected.className = selected.className.replace(`selected`,``)
+                songs[nr].className +="selected"
+              }
+              let songName = document.querySelector(".selected .d-flex p").innerText
+              let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+              let newName = document.querySelector("#songTitle").innerText = songName
+              let newLength = document.querySelector("#songLength").innerText = length
+
+              let audio = document.querySelector("#audio")
+              audio["src"] = `/playList/${newName}.mp3`
+            }
+            
+            function playBack(){
+              let songs = document.querySelectorAll("#songs .card>div")
+              let selected = document.querySelector(".selected")
+              let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                            
+              if(selected){
+                if(!nr==0){
+                  nr-= 1
+                  selected.className = selected.className.replace(`selected`,``)
+                  songs[nr].className +="selected"
+
+                  let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+
+                  let audio = document.querySelector("#audio")
+                  audio["src"] = `/playList/${newName}.mp3`
+                }
+              }
+              
+            }
+
+            function loop(){
+              if(document.getElementById("loop").classList.contains("checked")){
+                document.getElementById("loop").classList.remove("checked")
+                myAudio.loop = false
+              }else{
+                document.getElementById("loop").classList+="checked"
+                myAudio.loop = true
+              }
+              
+            }
+
     </script>
   </body>
 </html>
