@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    
+
+
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +18,7 @@
 
     <style>
       body{
-        background-color: black;
+        background-color:  #282828;
         }
         .card img{ padding: 3px;
 
@@ -23,8 +27,8 @@
         .container .card{
          
           
-          background-color: black;
-          outline: solid blue 1px;
+          background-color: #282828;
+          
           
           
         }
@@ -41,7 +45,7 @@
         
           }
           .card-body{
-            background-color: black;
+            background-color:  #282828;
            height: 120px;
           
           }
@@ -52,16 +56,22 @@
   font-weight: 700;
 }
      #imgBackground{
-       background-image: url("./images/images.png");
-       background-position: center;
+       background-image: url("./images/cover.png");
        background-repeat: no-repeat;
        background-size: cover;
+       display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
+      
        height: 350px;
+       width: 110%;
+   
      }
 
   #text_alg{
-        text-align: center;
-     justify-content: center;
+        text-align: left;
+     
         margin: auto;
        
       }
@@ -80,7 +90,7 @@
 } */
   .menu a:hover{
   color: white;
-  border-bottom: green solid 3px ;
+  
   }
 
   .btn{
@@ -100,32 +110,22 @@
     }
     .btn3{
       border: 1px solid green;
-    
     }
     
     .btn1:hover{
-      background-color:green ;
-      border: 2px solid green;
-      font-size: 1.1em;
-      
+      background-color:green ;  
     }
     .btn2:hover{
-      
-      border: 2px solid green;
-      font-size: 1.1em;
       background-color: Transparent;
-    
     }
     .btn3:hover{ 
       background-color: Transparent;
-      border: 2px solid green;
       }
  
     .img{
-      width: 100%;
-     
+     width: 100%;
      height: 300px;
-      background-size: cover;
+     background-size: cover;
     }
     .myAlbum{
       max-height: 90vh;
@@ -141,11 +141,76 @@ display:none!important;
   #content .card{
    margin-top: 1rem !important;
  }
+
+ .a1:hover {
+    color: green;
+    display: inline-block;
+    position: relative;
+}
+.a1:hover::after {
+    content: '';
+    height: 4px;
+    border-radius: 30px;
+    width:40%;
+    background-color: rgb(4, 179, 4);
+    position: absolute;
+    left:calc(50% - 15%);
+    bottom:0;
+    top:1;
+}
+.eFooter{
+  padding-left: 20px!important;}
+  .eFooter-endDiv{
+    padding-right: 20px!important;
+  }
+
+  @media(max-width: 360px){
+max-width: 360px;
+  }
+
+  @media (max-width:760px){
+    .eFooter{display: none;}
+    #menu{
+        display: none;
+    }
+    .container-fluid .row{
+        justify-content: center;
+    }
+    .footer_hide{
+        display: block !important;
+    }
+    footer .row .col-3:first-child i{
+        display: none;
+    }
+    #currentSongTime,
+    #songLength,
+    #volume{
+        display: none;
+    }
+    .container-fluid{
+        margin-top: 52px;
+    }
+    #songs{
+        overflow-y: auto;
+    }
+    header{
+        background-color: #121212;
+    }
+    #menu .col-10{
+        height: 86vh;
+    }
+    footer .row{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
     </style>
 
   </head>
   <body>
-      <div class="container-fluid">
+      <div class="container-fluid" >
           <div class="row">
               <div id="menu" class="col-2 black-bg">
                 <div>
@@ -169,11 +234,12 @@ display:none!important;
               <div class="col col-10 myAlbum " ><!--artist div-->
          
             
-                <div class=" d-flex  bolder justify-content-center  " id="imgBackground"><!--cover photo div-->
+                <div class=" d-flex  bolder justify-content-center" id="imgBackground" ><!--cover photo div-->
+               
                   
                   <div id="text_alg" class =" flex-column">
                     <p>33.000 MONTHLY USERS</p>
-                    <h1>Queen</h1>
+                    <h1>Eminem</h1>
     
                     <div class="  flex-row  justify-content-center" >
                         <button type="button" class="btn btn-primary btn1">Play</button>
@@ -183,28 +249,28 @@ display:none!important;
     
                     <div class=" menu bolder">
                       
-                        <a href="artistPage.html">OVERVIEW</a>
-                        <a href="artistPage.html">RELATED ARTISTS</a>
-                        <a href="artistPage.html">ABOUT</a>
+                        <a href="artistPage.html" class="a1">OVERVIEW</a>
+                        <a href="artistPage.html" class="a1">RELATED ARTISTS</a>
+                        <a href="artistPage.html" class="a1">ABOUT</a>
                     </div>
-                  </div class="d-flex">
+                  </div >
                 
                 </div><!--end of cover photo div-->
     
     
-                <div id="content">
-               <div class="container mt-3  ">
+                <div id="content " >
+               <div class="container mt-3 justify-content-center ">
                 <div class="row  " >
                     <h4 class="bolder pr-3"> Albums</h4>
                     <hr>
                 </div>
               </div>
     
-                <div class="row row-cols-2 row-cols-sm-2  row-cols-md-4 row-cols-lg-6 bolder "id="removeMarg"><!--row class for songs-->
+                <div class="row row-cols-1 row-cols-sm-2  row-cols-md-4 row-cols-lg-6 bolder justify-content-center "id="removeMarg"><!--row class for songs-->
     
                   <div  >
                   
-                    <div class="card mr-2" >
+                    <div class="card mr-2 mb-3 " >
                       <img src="/images/musicToBeMurdered.png" class="card-img-top" alt="...">
                        
                           <div class="card-body d-flex justify-content-between flex-column" >
@@ -271,7 +337,7 @@ display:none!important;
                       <img src="/images/badmeetsevil.jpg" class="card-img-top" alt="...">
                        
                           <div class="card-body  d-flex justify-content-between flex-column" >
-                            <h6 class="card-title">Song title</h6>
+                            <h6 class="card-title">Bad meets evil</h6>
                             <p class="card-text " >Eminem</p>
                        
                       </div>
@@ -283,7 +349,7 @@ display:none!important;
                       <img src="/images/recovery.jpg" class="card-img-top" alt="...">
                        
                           <div class="card-body  d-flex justify-content-between flex-column" >
-                            <h6 class="card-title">Song title</h6>
+                            <h6 class="card-title">Recovery</h6>
                             <p class="card-text " >Eminem</p>
                        
                       </div>
@@ -295,7 +361,7 @@ display:none!important;
                       <img src="/images/Encore.jpg" class="card-img-top" alt="...">
                        
                           <div class="card-body  d-flex justify-content-between flex-column" >
-                            <h6 class="card-title">Song title</h6>
+                            <h6 class="card-title">Encore</h6>
                             <p class="card-text " >Eminem</p>
                        
                       </div>
@@ -307,7 +373,7 @@ display:none!important;
                       <img src="/images/8miles.jpg" class="card-img-top" alt="...">
                        
                           <div class="card-body  d-flex justify-content-between flex-column" >
-                            <h6 class="card-title">Song title</h6>
+                            <h6 class="card-title">8-miles</h6>
                             <p class="card-text " >Eminem</p>
                        
                       </div>
@@ -319,7 +385,7 @@ display:none!important;
                       <img src="/images/detroit.jpg" class="card-img-top" alt="...">
                        
                           <div class="card-body  d-flex justify-content-between flex-column" >
-                            <h6 class="card-title">Song title</h6>
+                            <h6 class="card-title">Detroit</h6>
                             <p class="card-text " >Eminem</p>
                        
                       </div>
@@ -331,7 +397,7 @@ display:none!important;
                       <img src="/images/venom.jfif" class="card-img-top" alt="...">
                        
                           <div class="card-body  d-flex justify-content-between flex-column" >
-                            <h6 class="card-title">Song title</h6>
+                            <h6 class="card-title">Venom</h6>
                             <p class="card-text " >Eminem</p>
                        
                       </div>
@@ -373,9 +439,9 @@ display:none!important;
 
           <footer>
             <div class="row light-gray-bg">
-              <div class="col-3 d-flex p-2 pl-2 align-center footer_hide">
+              <div class="col-3 d-flex p-2 pl-2 m-l-5 align-center  eFooter footer_hide">
                 <img src="/images/The_Eminem_Show.jpg" width="45px" height="45px"/>
-                <div class="pb-0 mb-0">
+                <div class="pb-0 mb-0 ml-2">
                   <p id="songTitle" class="pl-3 p-0 m-0">Premonition (Intro)</p>
                   <label class="pl-3 ">Eminem</label>
                 </div>
@@ -398,7 +464,7 @@ display:none!important;
                   </div>
                 </div>
               </div>
-              <div class="col-3 d-flex p-2 pl-2 justify-content-end footer_hide">
+              <div class="col-3 d-flex p-2 pl-2 justify-content-end footer_hide eFooter-endDiv">
                 <i class="fa fa-bars ml-3 pt-3"></i>
                 <i class="fa fa-headphones ml-3 pt-3"></i>
                 <i class="fa fa-volume-up ml-3 pt-3"></i>

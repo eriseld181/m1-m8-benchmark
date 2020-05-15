@@ -23,7 +23,8 @@ body::-webkit-scrollbar {
     color: whitesmoke;
 }
 
-#menuOl{
+#menuOl,
+.navbar a{
     padding-top: 1rem;
     list-style: none;
     font-weight: 500;
@@ -88,7 +89,6 @@ body::-webkit-scrollbar {
 }
 
 #songs .card {
-    margin-top: 2rem !important;
     background-color: transparent;
     color: white;
     border: 0;
@@ -107,9 +107,10 @@ body::-webkit-scrollbar {
   }
 
 #songs {
-    margin-left: 50px;
+    margin-top: 30px;
+    margin-left: 40px;
     padding-right: 50px;
-    height: 90vh;
+    height: 85vh;
     overflow-y: auto;
 }
 
@@ -138,25 +139,63 @@ footer button {
     border: 0;
     color: whitesmoke;
 }
-.progress-bar{
+.progress{
     width: 100%;
     background-color: whitesmoke;
     border-radius: 20px;
-    height: 4px;
-    margin-top: 10px;
+    height: 10px;
+    margin-top: 8px;
     margin-right: 10px;
     margin-left: 10px;
 }
-.progress-bar1{
+.progress-bar{
+    color: #1b1919;
+}
+.volume{
     width: 30%;
     background-color: whitesmoke;
     border-radius: 20px;
-    height: 4px;
-    margin-top: 22px;
+    height: 10px;
+    margin-top: 35px;
     margin-right: 10px;
     margin-left: 10px;
 }
 
+input[type=range] {
+    height: 5px;
+    -webkit-appearance: none;
+    padding-top: 35px;
+    background: transparent;
+    width: 30%;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 30%;
+    height: 11px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000;
+    background: #74A9D8;
+    border-radius: 1px;
+    border: 0px solid #010101;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000031;
+    border: 1px solid #00001E;
+    height: 26px;
+    width: 26px;
+    border-radius: 15px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+  }
+
+
+
+
+
+  
 #icons{
     font-size: 15px;
 }
@@ -236,11 +275,21 @@ footer button {
     padding-right: 10px;
 }
 
+button:focus {
+    outline: none;
+  }
+input:focus {
+    outline: none;
+  }
+
 .songNr{
     display: none;
 }
 .checked {
     color: #0de431;
+}
+.border-left{
+    border-left: 4px solid rgb(1, 199, 1) !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -248,8 +297,12 @@ footer button {
     .footer_hide {
       display: none !important;
     }
+
 }
 @media only screen and (max-width: 800px) {
+    .navbar{
+        display: block !important;
+    }
     #menu{
         display: none !important;
     }
