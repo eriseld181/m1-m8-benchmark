@@ -1,0 +1,29 @@
+Date 25 May 2020
+TCP/IP
+------------------------------------------------------------------ 
+Networking is the basics on which every connected aplication works.
+It's necessary to have at least an idea of what happens under the hood.
+.................................
+open weather api: https://home.openweathermap.org/api_keys
+d01ccb458cc2846f7d8cf46b24017573
+
+
+--------------------------------
+//callback function
+//5000 miliseconds
+
+set timeout example:
+setTimeout(function() {
+console.log('hello world');
+}, 5000);
+...........................
+//using
+//create html http request
+ let httpRequest = new XMLHttpRequest();
+//add get() function here
+function get(url){
+
+httpRequest.open('GET', url);//create the request
+httpRequest.send();//send request to webserver
+
+}
