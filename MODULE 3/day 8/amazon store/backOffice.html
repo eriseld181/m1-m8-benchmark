@@ -102,6 +102,11 @@
             
             <div class="form-group">
               <button class="btn btn-primary mt-4" type="submit">
+                
+                  <span class="spinner-border text-warning d-none" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </span>
+
                 Add Product
               </button>
             </div>
@@ -111,12 +116,36 @@
     </div>
     <script src="./helper.js"></script>
     <script>
-      handleSubmit = () => {
-        event.preventDefault();
-        submitEvent();
-      };
+    
+      let id;
 
-      submitEvent = async () => {
+window.onload = async () => {
+  let urlParams = new URLSearchParams(window.location.search);
+  id = urlParams.get("id");
+
+  if (id) {
+    console.log("ID IS PRESENT, FETCHING DETAILS", id);
+    let event = await getEvent(id);
+    console.log("EVENT DETAILS", event);
+    document.querySelector("#name").value = event.name;
+    document.querySelector("#description").value = event.description;
+    document.querySelector("#brand").value = event.brand;
+    document.querySelector("#imgUrl").value = event.imageUrl;
+    document.querySelector("#price").value = event.price;
+  } else {
+    console.log("I WANT TO CREATE AN ELEMENT FROM SCRATCH");
+  }
+};
+
+handleSubmit = () => {
+  event.preventDefault();
+  submitEvent();
+};
+ 
+submitEvent = async () => {
+        let spinner = document.querySelector(".spinner-border");
+        spinner.classList.toggle("d-none");
+
         let myEvent = {
           name: document.querySelector("#name").value,
           description: document.querySelector("#description").value,
@@ -124,16 +153,22 @@
           imageUrl: document.querySelector("#imgUrl").value,
           price: document.querySelector("#price").value,
         };
-        
-      
         console.log("MYEVENT", myEvent);
 
-        let response = await saveEvent(myEvent);
+        let response;
+
+        if (id) {
+          response = await editEvent(id, myEvent);
+        } else {
+          response = await saveEvent(myEvent);
+        }
+
         console.log("RESPONSE FROM THE saveEvent", response);
         if (response.ok) {
-          alert("Event created successfully");
+          spinner.classList.toggle("d-none");
           location.assign("index.html");
         } else {
+          spinner.classList.toggle("d-none");
           alert("Event NOT created succesfully");
         }
       };
