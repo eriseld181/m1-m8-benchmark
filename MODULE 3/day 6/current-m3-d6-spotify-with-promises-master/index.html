@@ -258,6 +258,12 @@
         "kanyewest",
       ];
 
+     
+
+      let headers = new Headers({
+        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+        "x-rapidapi-key": "4013e328ffmsh3feb54311ce7296p1c3cc4jsnd3ad09e0821d",
+      });
       function albumCard(songInfo) {
         return `
         
@@ -271,69 +277,59 @@
         `;
       }
 
-      let headers = new Headers({
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-        "x-rapidapi-key": "4013e328ffmsh3feb54311ce7296p1c3cc4jsnd3ad09e0821d",
-      });
 
       window.onload = function () {
         let rockRandomArtists = [];
-        let popRandomArtists = [];
+        let popRandomartists = [];
         let hipHopRandomArtists = [];
 
-        while (rockRandomArtists.length < 4) {
+        while (rockRandomArtists.length <4){
+         
+          let artist = rockArtists [Math.floor(Math.random()*rockArtists.length)];
+         
+          if (!rockRandomArtists.includes(artist)){
+            rockRandomArtists.push(artist)
+          }
+        }
+        while (popRandomartists.length <4){
           let artist =
-            rockArtists[Math.floor(Math.random() * rockArtists.length)];
-
-          if (!rockRandomArtists.includes(artist)) {
-            rockRandomArtists.push(artist);
+           popArtists [Math.floor(Math.random()*popArtists.length)];
+         
+          if (!popRandomartists.includes(artist)){
+            popRandomartists.push(artist)
+          }
+        }
+        while (hipHopRandomArtists.length <4){
+          let artist = hipHopArtists [Math.floor(Math.random()*hipHopArtists.length)];
+    
+          if (!hipHopRandomArtists.includes(artist)){
+            hipHopRandomArtists.push(artist)
           }
         }
 
-        while (popRandomArtists.length < 4) {
-          let artist =
-            popArtists[Math.floor(Math.random() * popArtists.length)];
-
-          if (!popRandomArtists.includes(artist)) {
-            popRandomArtists.push(artist);
-          }
-        }
-
-        while (hipHopRandomArtists.length < 4) {
-          let artist =
-            hipHopArtists[Math.floor(Math.random() * hipHopArtists.length)];
-
-          if (!hipHopRandomArtists.includes(artist)) {
-            hipHopRandomArtists.push(artist);
-          }
-        }
-
-        for (let j = 0; j < rockRandomArtists.length; j++) {
-          fetch(
-            "https://deezerdevs-deezer.p.rapidapi.com/search?q=" +
-              rockRandomArtists[j],
-            {
-              method: "GET",
-              headers,
-            }
-          )
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              }
-            })
-            .then((artists) => {
-              console.log(artists);
-              let songInfo = artists.data;
-              let div = document.querySelector("#rockSection");
-              div.innerHTML += albumCard(songInfo[0]);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        }
-
-        for (let j = 0; j < popRandomArtists.length; j++) {
+for(let j = 0; j<hipHopRandomArtists; j++){
+fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" +hipHopRandomArtists[j], 
+  {
+	"method": "GET",
+	headers,
+  } 
+)
+.then((response) => {
+  if(response.ok){
+    return response.json();
+}
+})
+.then((artist) => {
+  console.log(artist)
+  let songInfo = artist.data
+  let div = document.querySelector('#rockSection')
+  div.innerHTML +=albumCard(songInfo[0])
+})
+.catch((error) => {
+  console.log(error);
+})
+}
+for (let j = 0; j < popRandomArtists.length; j++) {
           fetch(
             "https://deezerdevs-deezer.p.rapidapi.com/search?q=" +
               popRandomArtists[j],
@@ -382,7 +378,7 @@
               console.log(error);
             });
         }
-      };
+}
     </script>
   </body>
 </html>
