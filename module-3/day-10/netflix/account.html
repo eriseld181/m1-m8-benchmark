@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Account</title>
+    <STYLE>
+      .navbar{background-color: black;}
+    #payImg{
+    
+        height: 25px;
+        outline: solid blue 2px;
+       
+    }
+    h5{
+        color: #9d9d9f;
+    }
+    p{
+        font-size:13px
+        }
+    .container{
+        width: 900px;
+           height: auto;
+           background-color: #f3f3f3;
+        }
+        .infoClass{
+            color:#aeaeae;
+        }
+        .btn{background-color: #dedede!important;
+        border: solid 1px black;}
+        #foot{
+           text-align: center;
+           padding-bottom: 20px;
+            font-size: 13px;
+            color:rgb(161, 161, 161);
+            background-color: #000000;
+              
+        }
+        .footer-container{background-color: #000000;
+            width: 100%;
+       }
+       .hideButtons{
+           display: none;
+       }
+    </STYLE>
+  </head>
+  <body>
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black" >
+
+        
+        <a class="navbar-brand" href="MainPage.html"><img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c529.png" height=50px></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="MainPage.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="editprofile.html">Edit profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="account.html">Account information</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      
+   
+    <div class="container"><!--start of container-->
+        <h1 >Account</h1>
+        <hr>
+    <div class="row"  > <!--start of 1 row-->
+        <div class="col-4"  > <!--start of 1 col-->
+            <h5>MEMBERSHIP & BILLING</h5>
+   
+            <button type="button" class="btn btn-light"><a href="MainPage.html" style="color: black; text-decoration: none;">Cancel Membership</a> </button>
+        </div><!--end of 1 col-->
+
+        <!--personal info-->
+        <div class="col-8" ><!--start of 2 col-->
+           
+            <div class="row" ><!--start of a row inside of 2 col-->
+                <div class="col-6" ><!--start of 1 col of nested row-->
+        <p><span id="txt1"><b>student@strive.school</b></span></p>
+        <div id="button0">
+        </div>
+        <p class="infoClass">Password: <span id="txt2">********</span></p>
+        <div id="button1">
+        </div>
+        <p class="infoClass">Phone:<span id="txt3">321 044 1279</span> </p>
+        <div id="button2">
+        </div>
+    </div><!--end of 1 col of nested row-->
+
+    <div class="col-6"><!--start of 2 col of nested row-->
+        <p><a href="#" onclick="inputEmail()">Change Email</a></p>
+        <p><a href="#" onclick="inputPassword()">Change Password</a></p>
+        <p><a href="#" onclick="inputNumber()">Change Number</a></p>
+        
+    </div><!--end of 2 col of nested row-->
+</div><!--end of nested row-->
+<hr>
+<!--paypal section-->
+<div class="row" ><!--start of  paypal row -->
+    <div class="col-6" > <!--start of  paypal col -->
+<p><img src="paypal.png" alt="" style="height: 30px;margin:5px 10px 0 0;"><span><b>admin@strive.school</b> </span></p>
+
+</div><!--end of  paypal col -->
+
+<div class="col-6"><!--start of  paypal billing col -->
+<p><a href="">Update payment info</a></p>
+<p><a href="">Billing details</a></p>
+
+
+</div><!--end of  paypal billing col -->
+</div><!--end of  paypal row -->
+<hr>
+
+<div class="row" >
+    <div class="col-6" >
+
+
+</div>
+<div class="col-6">
+<p><a href="">Redeem gift card or promo code</a></p>
+<p><a href="">Where to buy gift cards</a></p>
+</div> 
+</div>
+</div>
+</div><!--row end-->
+
+<hr>
+<div class="row" > <!--start of 1 row-->
+    <div class="col-4" > <!--start of 1 col-->
+        <h5 >PLAN DETAILS</h5>
+    </div> <!--END of 1 col-->
+
+    <div class="col-4" > <!--start of 2 col-->
+        <h6 >PREMIUM <span style="border:solid 3px black; padding: 2px; "><b>ULTRA HD</b> </span></h6>
+    </div> <!--END of 2 col-->
+    <div class="col-4" > <!--start of 3 col-->
+        <p><a href="">Update payment info</a></p>
+    </div> <!--END of 3 col-->
+
+
+</div> <!--END of 1 row-->
+
+<hr>
+
+<div class="row" > <!--start of 1 row-->
+    <div class="col-4" > <!--start of 1 col-->
+        <h5>SETTINGS</h5>
+       
+    </div><!--end of 1 col-->
+
+    <!--personal info-->
+    <div class="col-8" ><!--start of 2 col-->
+       
+        <div class="row" ><!--start of a row inside of 2 col-->
+            <div class="col-12" ><!--start of 1 col of nested row-->
+              
+
+    <p><a href="">Parental control</a> </p>
+    <p><a href="">Test participation</a> </p>
+    <p><a href="">Manage download devices</a> </p>
+    <p><a href="">Activate a device</a> </p>
+    <p><a href="">Recent device streaming activity</a> </p>
+    <p><a href="">Sign out of all devices</a> </p>
+ 
+</div><!--end of 1 col of nested row-->
+
+</div><!--end of nested row-->
+
+</div><!--end of  paypal row -->
+
+
+</div>
+
+<hr>
+
+<div class="row" > <!--start of 1 row-->
+    <div class="col-4" > <!--start of 1 col-->
+        <h5>My Profile</h5>
+       
+    </div><!--end of 1 col-->
+
+    <!--personal info-->
+    <div class="col-8" ><!--start of 2 col-->
+       
+        <div class="row" ><!--start of a row inside of 2 col-->
+            <div class="col-6" ><!--start of 1 col of nested row-->
+                <p><img src="user.png" alt="" style="height: 30px;margin:0 10px 5px 0;"><span><b>Strive Student</b> </span></p>
+
+    <p><a href="">Language</a> </p>
+    <p><a href="">Playback settings</a> </p>
+    <p><a href="">Subtitle apperance</a> </p>
+ 
+</div><!--end of 1 col of nested row-->
+
+<div class="col-3" ><!--start of 2 col of nested row-->
+   <div style="margin-top: 50px; ">
+    <p><a href="">Viewing Activity</a></p>
+    <p><a href="">Ratings</a></p>
+   </div> 
+    
+</div><!--end of 2 col of nested row-->
+<div class="col-3"><!--start of 2 col of nested row-->
+    <p><a href="editprofile.html">Manage profiles</a></p>
+    <p><a href="editprofile.html">Add profile email</a></p>
+    
+</div><!--end of 2 col of nested row-->
+</div><!--end of nested row-->
+
+</div><!--end of  paypal row -->
+
+
+</div>
+
+   </div><!--container end-->
+   
+<footer id="foot">
+    <div class="container-fluid footer-container">
+        <img 
+        src="https://pngimage.net/wp-content/uploads/2018/06/social-media-icons-png-gray-2.png" height=50px>
+        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 row-col-4">
+          <div class="col">
+            Audio and Subtitles<br>
+            Media Center<br>
+            Privacy<br>
+            Contact Us<br>
+          </div>
+          <div class="col">
+            Audio Description<br>
+            Investor Relations<br>
+            Legal Notices<br>
+          </div>
+          <div class="col">
+            Help Center<br>
+            Jobs<br>
+            Cookie Preferences<br>
+          </div>
+          <div class="col">
+              Gift Cards<br>
+              Terms of Use<br>
+              Corporate
+          </div>
+        
+      </div>
+      </div>
+  </footer>
+        <script>
+            let textBtn, btn, change, txtChild, btnChild, div
+            function inputEmail() {
+                div=document.querySelector('#button0')
+                divArr=document.querySelectorAll('#button0 input')
+                change=document.querySelector("#txt1")
+                txtChild=document.createElement('input')
+                btnChild=document.createElement('input')
+                txtChild.type="text"; btnChild.type="button"
+                btnChild.value="Add Email"
+                txtChild.id="inputText";
+                btnChild.id="inputBtn1"
+                btnChild.addEventListener("click",function(){
+                    change.innerText=document.querySelector("#inputText").value;
+                    document.querySelector('#inputBtn1').className="hideButtons"; 
+                    document.querySelector('#inputText').className="hideButtons";
+
+                })
+                txtChild.placeHolder="Input new Email"
+                
+                div.appendChild(txtChild)
+                div.appendChild(btnChild)
+            }
+
+                function inputPassword() {
+                div=document.querySelector('#button1')
+                change=document.querySelector("#txt2")
+                txtChild=document.createElement('input')
+                btnChild=document.createElement('input')
+                txtChild.type="text"; btnChild.type="button"
+                btnChild.value="Password"
+                txtChild.id="inputText1";
+                btnChild.id="inputBtn2"
+                btnChild.addEventListener("click",function(){
+                    change.innerText=document.querySelector("#inputText1").value;
+                    document.querySelector('#inputBtn2').className="hideButtons"; 
+                    document.querySelector('#inputText1').className="hideButtons";
+
+                })
+                txtChild.placeHolder="Input new Email"
+                
+                div.appendChild(txtChild)
+                div.appendChild(btnChild)
+            }
+
+
+            function inputNumber() {
+                div=document.querySelector('#button2')
+                change=document.querySelector("#txt3")
+                txtChild=document.createElement('input')
+                btnChild=document.createElement('input')
+                txtChild.type="text"; btnChild.type="button"
+                btnChild.value="Number"
+                txtChild.id="inputText3";
+                btnChild.id="inputBtn3"
+                btnChild.addEventListener("click",function(){
+                    change.innerText=document.querySelector("#inputText3").value;
+                    document.querySelector('#inputBtn3').className="hideButtons"; 
+                    document.querySelector('#inputText3').className="hideButtons";
+
+                })
+                txtChild.placeHolder="Input new Email"
+                
+                div.appendChild(txtChild)
+                div.appendChild(btnChild)
+            }
+        </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

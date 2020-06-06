@@ -1,0 +1,71 @@
+body{
+    background-color: #221f1f;
+    color:#f5f5f1;
+    
+
+    
+    
+}
+.navbar{
+    background-color: black;
+}
+
+h1{
+    font-size:18px;
+    margin-top: 20px;
+}
+h2{
+    font-size:18px;            
+    margin-top: 20px;
+    margin-left: -10px;
+    margin-bottom: 20px;
+    
+}
+.movie-tiles img{
+    max-height: 100%;
+    max-width:180px;
+    object-fit:cover;
+    margin-left: -10px;   
+    margin-top: 10px;   
+    
+    
+
+}
+
+.movie-tiles img:hover{
+transform: scale(1.5);
+}
+
+
+#foot{
+    margin-top: 100px;
+    font-size: 13px;
+    color:rgb(161, 161, 161);
+    
+    
+}
+
+.dropdown button{
+    background-color:black;
+    text-align: left;
+    margin-top: 13px;
+    
+}
+
+.dropdown .dropdown-menu {
+    background-color: black;
+    
+}
+
+.dropdown-item{
+    color: white;
+}
+
+
+
+.container{
+    margin-top: 15px;
+}
+
+
+
