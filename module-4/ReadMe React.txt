@@ -1,5 +1,5 @@
 1. Use 'cd' command to go to the specified folder where you want to create your app.
-	cd Documents/1.Strive/M1-M8-Benchmark/MODULE_4/DAY_2
+	cd Documents/1.Strive/M1-M8-Benchmark/MODULE_4/day-2
 
 2. Use this code to create new file and the React insde of it 
 	npx create-react-app eriseld-app
