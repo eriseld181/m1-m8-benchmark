@@ -5,11 +5,10 @@ import { Link, withRouter } from 'react-router-dom'
 
 const NavBar = (props) => (
   <Navbar variant="dark" expand="lg">
-    <Navbar.Brand href="#home">
-      <Image
-        src="/assets/logo.png"
-        style={{ width: "100px", height: "55px" }}
-      />
+    <Navbar.Brand>
+    <Link to="/home"
+       className={props.location.pathname === '/home'? "nav-link active": "nav-link"}>
+      <Image src="/assets/logo.png"style={{ width: "100px", height: "55px" }} /></Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
