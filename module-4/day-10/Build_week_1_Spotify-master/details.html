@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Spotify</title>
+    <link rel="icon" type="image/png" href="./photos/icon.png" />
+    <style>
+      #fetchSearch .card{
+        margin-top: 20px;
+        margin-left: 20px;
+        color: whitesmoke;
+        text-align: center;
+        border: 0;
+        background: transparent;
+      }
+      #fetchSearch .card:hover{
+        border-bottom: 1px solid rgb(173, 154, 154);
+      }
+      #songs .card {
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body class="gray-bg">
+    <header id="smallHeader" class="fixed-top">
+      <!-- Small & Extra Small Devices -->
+      <div class="d-sm-block d-md-block d-lg-block d-xl-none"><!-- extra small device-->
+         <nav class="navbar navbar-expand-mb navbar-dark text-white">
+              <div class="d-flex justify-content-between w-100">
+                <a class="navbar-brand" href="#">Spotify</a>
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                 </button>
+              </div>
+           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+           <div class="navbar-nav">
+            <ol id="menuOl">
+              <li><i class="fa fa-home pr-2"></i><a style="text-decoration: none; color: whitesmoke;" href="./html/trending.html">Home</li></a>
+              <li><a href="./search.html"><i class="fa fa-search pr-2"></i>Search</li></a>
+              <li class="border-left"><a href="./artistPage.html" style="text-decoration: none; color: whitesmoke;"><i class="fa fa-bookmark pr-2"></i>Your Library</li></a>
+            </ol>
+           </div>
+           </div>
+         </nav>
+   </div><!-- end of extra small device -->
+ </header>
+      <div class="container-fluid">
+          <div class="row">
+              <div id="menu" class="col-2 black-bg">
+                <div>
+                  <img src="./photos/spotify.png" width="120px" height="40px"/>
+                  <ol id="menuOl">
+                    <li><i class="fa fa-home pr-2"></i><a style="text-decoration: none; color: whitesmoke;" href="./html/trending.html">Home</li></a>
+                    <li class="border-left"><a href="./search.html" style="text-decoration: none; color: whitesmoke;"><i class="fa fa-search pr-2"></i>Search</li></a>
+                    <li><a href="./artistPage.html" style="text-decoration: none; color: whitesmoke;"><i class="fa fa-bookmark pr-2"></i>Your Library</li></a>
+                  </ol>
+                </div>
+                <div id="menu2">
+                  <p><i class=" ml-2 fa fa-download pr-2"></i>Install App</p>
+                  <hr>
+                  <div class="d-flex justify-content-between">
+                    <img src="./photos/avatar.png" height="25px" width="30px" class="pr-2" />
+                    <p><b>Klevin Bazaiti</b></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-10 gray-bg">
+                <div class="row row-cols-xs-1">
+                  <div id="content" class="col-12 col-md-4 d-flex justify-content-end">
+                    <div id="artist"  class="card mt-5">
+                      <img  src="" height="250px"/>
+                      <p></p>
+                      <label id="label1"></label>
+                      <button type="button" class="btn">PLAY</button>
+                      <label id="label2"></label>
+                    </div>
+                  </div>
+                  <div id="songs" class="col">
+                    <div  class="card">
+                      
+                  </div>
+                </div>
+              </div>
+              </div>
+          </div>
+          <footer>
+            <div class="row light-gray-bg">
+              <div class="col-3 d-flex p-2 pl-2 align-center footer_hide">
+                <img id="songImg" src="" width="45px" height="45px"/>
+                <div class="pb-0 mb-0">
+                  <p id="songTitle" class="pl-3 p-0 m-0"></p>
+                  <label id="artistName" class="pl-3 "></label>
+                </div>
+                <i class="fa fa-heart ml-3 pt-3"></i>
+                <i class="fa fa-window-maximize ml-3 pt-3"></i>
+              </div>
+              <div class="col p-1">
+                <div class="row-1">
+                  <div id="icons" class="col d-flex justify-content-center align-center">
+                    <button><i class="fa fa-random pr-2 pt-1"></i></button>
+                    <button id="playBack"><i class="fa fa-step-backward pr-2 pt-1"></i></button>
+                    <button onclick="togglePlay()" id="play"><audio id="audio" autoplay="autoplay" src=""> </audio><i class="fa fa-play-circle pr-2"></i></button>
+                    <button id="playNext"><i class="fa fa-step-forward pr-2 pt-1"></i></button>
+                    <button onclick="loop()" id="loop"><i class="fa fa-retweet pt-1"></i></button>
+                  </div>
+                  <div class="col d-flex footer_hide">
+                    <label id="currentSongTime">0:00</label>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <label id="songLength">2:54</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 d-flex p-2 pl-2 justify-content-end align-center footer_hide">
+                <button><i class="fa fa-bars ml-3 pt-3"></i></button>
+                <button><i class="fa fa-headphones ml-3 pt-3"></i></button>
+                <button id="volumeIcon"><i class="fa fa-volume-up ml-3 pt-3"></i></button>
+                <input id="volume" type="range" min="0" max="100" value="80" step="1">
+              </div>
+            </div>
+          </footer>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+
+
+    window.onload = () =>{
+        let urlParams = new URLSearchParams(window.location.search)
+        let albumId = urlParams.get("albumId")
+        let artistId = urlParams.get("artistId")
+
+        if(albumId){
+            fetch("https://deezerdevs-deezer.p.rapidapi.com/album/"+albumId, {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": "b0688e745dmsh41b788a14af44c3p1bd80cjsn95f97f3e6443"
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          let artistImg = document.querySelector("#artist img")
+          let albumName = document.querySelector("#artist p")
+          document.querySelector("#songImg").src=data.cover_small
+          artistImg.src = data.cover_xl
+          albumName.innerText = data.title
+          document.querySelector("title").innerText=`Spotify - ${data.artist.name} - ${data.title}`
+          document.querySelector("#artist #label1").innerText=data.artist.name
+          document.querySelector("#artist #label2").style.display="none"
+          
+          fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${albumId}/tracks`, {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": "b0688e745dmsh41b788a14af44c3p1bd80cjsn95f97f3e6443"
+          }
+         })
+         .then(response => response.json())
+         .then(data => data.data)
+         .then(dataCollected =>{
+
+            document.querySelector("#artistName").innerText=dataCollected[0].artist.name
+            
+            var songNumber= 0;
+             dataCollected.forEach(songs =>{
+                let reference = document.querySelector("#songs .card")
+
+                reference.innerHTML+=`
+                            <div>
+                            <div class="d-flex justify-content-between">
+                                <p><i class="fa fa-music pr-3"></i>${songs.title}</p>
+                                <p>${songs.duration / 100}</p>
+                            </div>
+                            <label>${songs.artist.name}</label>
+                            <p class="songNr">${songNumber}</p>
+                            </div>`
+                songNumber++
+             })
+             var songs = document.querySelectorAll("#songs .card>div")
+             let nextButton = document.querySelector("#playNext")
+            
+            for(let i=0; i<songs.length; i++){
+              songs[i].addEventListener("click",function(event){
+                let selected = document.querySelector(".selected")
+                  if(selected){
+                      selected.className = selected.className.replace(`selected`,``)
+                  }
+                  event.currentTarget.className += "selected"
+                  let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+
+                  let audio = document.querySelector("#audio")
+                  audio["src"] = `${dataCollected[i].preview}`
+                 
+              })
+
+              }
+              nextButton.addEventListener("click",function(event){
+                let songs = document.querySelectorAll("#songs .card>div")
+              let selected = document.querySelector(".selected")
+              let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                            
+              if(selected){
+                nr+= 1
+                selected.className = selected.className.replace(`selected`,``)
+                songs[nr].className +="selected"
+                let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+                let audio = document.querySelector("#audio")
+              audio["src"] = `${dataCollected[nr].preview}`
+              }
+              
+              })
+
+              playBack.addEventListener("click",function(){
+                let songs = document.querySelectorAll("#songs .card>div")
+                let selected = document.querySelector(".selected")
+                let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                              
+                if(selected){
+                  if(!nr==0){
+                    nr-= 1
+                    selected.className = selected.className.replace(`selected`,``)
+                    songs[nr].className +="selected"
+
+                    let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+
+                    let audio = document.querySelector("#audio")
+                    audio["src"] = `${dataCollected[nr].preview}`
+                  }
+                }
+              })
+              
+              let myAudio = document.getElementById("audio")
+                let progress = document.querySelector(".progress-bar")
+                myAudio.addEventListener("timeupdate",function(event){
+                  progress.style.width = ((myAudio.currentTime / myAudio.duration)* 100) +"%";
+                },false)
+
+                myAudio.addEventListener("timeupdate",function(event){
+                  let currentMinutes, currentSeconds, totalMinutes, totalSeconds
+                  currentMinutes = Math.floor((myAudio.currentTime / 60))
+                  totalMinutes = Math.floor((myAudio.duration / 60))
+                  currentSeconds = Math.floor((myAudio.currentTime % 60))
+                  totalSeconds = Math.floor((audio.duration % 60))
+
+                  let currentTime = currentMinutes + ":" + currentSeconds
+                  let totalTime = totalMinutes + ":" + totalSeconds
+                  currentSongTime.innerText = currentTime
+                  songLength.innerText = totalTime
+                },false)
+
+                let seeking;
+                volume.addEventListener("mousedown",function(){
+                  myAudio.volume = volume.value / 100
+                })
+                volume.addEventListener("mousemove",function(){
+                  myAudio.volume = volume.value / 100
+                })
+
+                volumeIcon.addEventListener("click",function(){
+                  if(myAudio.muted){
+                    myAudio.muted = false
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-up ml-3 pt-3"
+                  }else{
+                    myAudio.muted = true
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-off ml-3 pt-3"
+                  }
+                },false)
+                
+
+         })
+        }
+        )}else if(artistId){
+            fetch("https://deezerdevs-deezer.p.rapidapi.com/artist/"+artistId, {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": "b0688e745dmsh41b788a14af44c3p1bd80cjsn95f97f3e6443"
+          }
+        })
+        .then(response => response.json())
+        .then(data =>{
+          let artistImg = document.querySelector("#artist img")
+          let artistName = document.querySelector("#artist p")
+          artistImg.src = data.picture_xl
+          artistName.innerText = data.name
+          document.querySelector("#songImg").src=data.picture_small
+          document.querySelector("title").innerText=`Spotify - ${data.name} - Top 50`
+          document.querySelector("#artist #label1").style.display="none"
+          document.querySelector("#artist #label2").style.display="none"
+          
+          fetch(`https://deezerdevs-deezer.p.rapidapi.com/artist/${artistId}/top?limit=50`, {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+            "x-rapidapi-key": "b0688e745dmsh41b788a14af44c3p1bd80cjsn95f97f3e6443"
+          }
+         })
+         .then(response => response.json())
+         .then(data => data.data)
+         .then(dataCollected =>{
+          document.querySelector("#artistName").innerText=dataCollected[0].artist.name
+          var numberOfSong = 0
+             dataCollected.forEach(songs =>{
+                let reference = document.querySelector("#songs .card")
+                
+                reference.innerHTML+=`
+                            <div>
+                            <div class="d-flex justify-content-between">
+                                <p><i class="fa fa-music pr-3"></i>${songs.title}</p>
+                                <p>${songs.duration / 100}</p>
+                            </div>
+                            <label>${songs.artist.name}</label>
+                            <p class="songNr">${numberOfSong}</p>
+                            </div>`
+                numberOfSong++
+             })
+             var songs = document.querySelectorAll("#songs .card>div")
+             let nextButton = document.querySelector("#playNext")
+            
+            for(let i=0; i<songs.length; i++){
+              songs[i].addEventListener("click",function(event){
+                let selected = document.querySelector(".selected")
+                  if(selected){
+                      selected.className = selected.className.replace(`selected`,``)
+                  }
+                  document.querySelector("#songImg").src=dataCollected[i].album.cover_small
+                  event.currentTarget.className += "selected"
+                  let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+
+                  let audio = document.querySelector("#audio")
+                  audio["src"] = `${dataCollected[i].preview}`
+                 
+              })
+
+              }
+              nextButton.addEventListener("click",function(event){
+                let songs = document.querySelectorAll("#songs .card>div")
+              let selected = document.querySelector(".selected")
+              let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                            
+              if(selected){
+                nr+= 1
+                selected.className = selected.className.replace(`selected`,``)
+                songs[nr].className +="selected"
+                let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+                let audio = document.querySelector("#audio")
+              audio["src"] = `${dataCollected[nr].preview}`
+              }
+              
+              })
+
+              playBack.addEventListener("click",function(){
+                let songs = document.querySelectorAll("#songs .card>div")
+                let selected = document.querySelector(".selected")
+                let nr = parseInt(document.querySelector("#songs .selected .songNr").innerText)
+                              
+                if(selected){
+                  if(!nr==0){
+                    nr-= 1
+                    selected.className = selected.className.replace(`selected`,``)
+                    songs[nr].className +="selected"
+
+                    let songName = document.querySelector(".selected .d-flex p").innerText
+                  let length = document.querySelector(".selected .d-flex p:not(:first-child)").innerText
+
+                  let newName = document.querySelector("#songTitle").innerText = songName
+                  let newLength = document.querySelector("#songLength").innerText = length
+
+                    let audio = document.querySelector("#audio")
+                    audio["src"] = `${dataCollected[nr].preview}`
+                  }
+                }
+              })
+              
+              let myAudio = document.getElementById("audio")
+                let progress = document.querySelector(".progress-bar")
+                myAudio.addEventListener("timeupdate",function(event){
+                  progress.style.width = ((myAudio.currentTime / myAudio.duration)* 100) +"%";
+                },false)
+
+                myAudio.addEventListener("timeupdate",function(event){
+                  let currentMinutes, currentSeconds, totalMinutes, totalSeconds
+                  currentMinutes = Math.floor((myAudio.currentTime / 60))
+                  totalMinutes = Math.floor((myAudio.duration / 60))
+                  currentSeconds = Math.floor((myAudio.currentTime % 60))
+                  totalSeconds = Math.floor((audio.duration % 60))
+
+                  let currentTime = currentMinutes + ":" + currentSeconds
+                  let totalTime = totalMinutes + ":" + totalSeconds
+                  currentSongTime.innerText = currentTime
+                  songLength.innerText = totalTime
+                },false)
+
+                let seeking;
+                volume.addEventListener("mousedown",function(){
+                  myAudio.volume = volume.value / 100
+                })
+                volume.addEventListener("mousemove",function(){
+                  myAudio.volume = volume.value / 100
+                })
+
+                volumeIcon.addEventListener("click",function(){
+                  if(myAudio.muted){
+                    myAudio.muted = false
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-up ml-3 pt-3"
+                  }else{
+                    myAudio.muted = true
+                    document.querySelector("#volumeIcon i").classList="fa fa-volume-off ml-3 pt-3"
+                  }
+                },false)
+         })
+        }
+        )
+        }
+    }
+    var myAudio = document.getElementById("audio")
+            var isPlaying = true
+
+            function togglePlay() {
+              if (isPlaying) {
+                myAudio.pause()
+              } else {
+                myAudio.play();
+              }
+            }
+            myAudio.onplaying = function() {
+              isPlaying = true;
+              document.querySelector("#play i").classList="fa fa-pause pr-2"
+            }
+            myAudio.onpause = function() {
+              isPlaying = false;
+              document.querySelector("#play i").classList="fa fa-play-circle pr-2"
+            }
+
+            function loop(){
+              if(document.getElementById("loop").classList.contains("checked")){
+                document.getElementById("loop").classList.remove("checked")
+                myAudio.loop = false
+              }else{
+                document.getElementById("loop").classList+="checked"
+                myAudio.loop = true
+              }
+              
+            }
+
+    
+
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,261 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: .282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: .61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* css code*/
+body {
+  background-color: #282828;
+}
+
+.card img {
+  padding: 3px;
+
+
+}
+
+.container .card {
+  background-color: #282828;
+}
+
+.border-left {
+  border-left: 4px solid rgb(1, 199, 1) !important;
+}
+
+.card-body h6 {
+  font-size: small;
+  text-align: center;
+}
+
+.card-body p {
+  font-size: medium !important;
+  text-align: center;
+
+  text-align: center;
+
+}
+
+.card-body {
+  background-color: #282828;
+  height: 120px;
+
+}
+
+
+.bolder {
+  color: white;
+  font-weight: 700;
+}
+
+.imgBackground {
+  background-image: url("./photos/cover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  height: 350px;
+  width: 110%;
+
+}
+
+.text_alg {
+  text-align: left;
+
+  margin: auto;
+
+}
+
+.menu {
+  margin-top: 100px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+
+.menu a:hover {
+  color: white;
+
+}
+
+.btn {
+  margin-left: 10px !important;
+  border-radius: 25px;
+  color: white;
+}
+
+.btn1 {
+  background-color: green;
+  border: 1px solid green;
+  width: 90px;
+}
+
+.btn2 {
+
+  border: 1px solid green;
+  width: 90px;
+}
+
+.btn3 {
+  border: 1px solid green;
+}
+
+.btn1:hover {
+  background-color: green;
+}
+
+.btn2:hover {
+  background-color: Transparent;
+}
+
+.btn3:hover {
+  background-color: Transparent;
+}
+
+.img {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+}
+
+.myAlbum {
+  max-height: 90vh;
+  overflow: auto;
+  padding-bottom: 10px;
+}
+
+.content {
+  padding: 0 70px;
+  margin: 0 75px 0 75px !important;
+}
+
+.myAlbum::-webkit-scrollbar {
+  display: none !important;
+}
+
+.content .card {
+  margin-top: 1rem !important;
+}
+
+.a1:hover {
+  color: green;
+  display: inline-block;
+  position: relative;
+}
+
+.a1:hover::after {
+  content: '';
+  height: 4px;
+  border-radius: 30px;
+  width: 40%;
+  background-color: rgb(4, 179, 4);
+  position: absolute;
+  left: calc(50% - 15%);
+  bottom: 0;
+  top: 1;
+}
+
+.eFooter {
+  padding-left: 20px !important;
+}
+
+.eFooter-endDiv {
+  padding-right: 20px !important;
+}
+
+
+@media (max-width:760px) {
+  .eFooter {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .container-fluid .row {
+    justify-content: center;
+  }
+
+  .footer_hide {
+    display: block !important;
+  }
+
+  footer .row .col-3:first-child i {
+    display: none;
+  }
+
+  .currentSongTime,
+  .songLength,
+  .volume {
+    display: none;
+  }
+  .container-fluid {
+    margin-top: 52px;
+  }
+
+  .songs {
+    overflow-y: auto;
+  }
+
+  header {
+    background-color: #121212;
+  }
+
+  .menu .col-10 {
+    height: 86vh;
+  }
+
+  footer .row {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+}
+
+footer .row .col-3:first-child {
+  margin-left: 20px;
+}

@@ -26,17 +26,9 @@ function App() {
           Learn React
         </a>
         <MyComp
-          text="declared prop1 text"
-          spaceship={6} />
-        <MyComp
-          text="declared prop2 text"
-          spaceship={6} />
-        <MyComp
-          style={style}
-          text="declared prop3 text" />
-        <MyComp text="declared prop4 text" />
-        <MyComp paragraph="declare a paragraph" />
-        <a href="/">some text of anchor link</a>
+          movie="declared prop1 text"
+        />
+
 
       </header>
     </div>
