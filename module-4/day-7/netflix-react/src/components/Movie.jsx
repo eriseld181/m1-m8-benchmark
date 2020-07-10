@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Col,
-  Modal,
-  Form,
-  InputGroup,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Col, Modal, Form, InputGroup, FormControl, Button, } from "react-bootstrap";
 import CommentList from "./CommentList";
 
 class Movie extends Component {
