@@ -5,7 +5,7 @@ const ProjectSchema = new Schema(
     {
         projectName: String,
         projectType: String,
-        collaborators: { type: Array },
+
         studentId: [{
             type: Schema.Types.ObjectId,
             ref: "students",

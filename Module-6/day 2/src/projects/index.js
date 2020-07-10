@@ -1,19 +1,21 @@
 const express = require("express")
 const ProjectSchema = require("./ProjectSchema")
-
+const queryToMongo = require("query-to-mongo")
 const projectRouter = express.Router()
 //get all project 
 projectRouter.get("/", async (req, res, next) => {
     try {
-        const project = await ProjectSchema.find(req.query)
-        console.log(project)
-        res.send(project)
-
+        const stud = queryToMongo(req.query)
+        const student = await ProjectSchema.find(stud.criteria, stud.options.fields)
+            .skip(stud.options.skip)
+            .limit(stud.options.limit)
+            .sort(stud.options.sort)
+        res.send(student)
     } catch (error) {
         next(error)
     }
-
 })
+
 //get the single project id
 projectRouter.get("/:id", async (req, res, next) => {
     try {
