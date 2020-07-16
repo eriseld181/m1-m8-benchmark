@@ -1,7 +1,9 @@
 const express = require("express")
 
 const cors = require("cors")
+
 const { join } = require("path")
+
 const listEndpoints = require("express-list-endpoints")
 const mongoose = require("mongoose")
 const port = process.env.PORT
@@ -30,14 +32,17 @@ server.use(genericErrorHandler)
 
 console.log(listEndpoints(server))
 
-mongoose
-    .connect("mongodb://localhost:27017/Hw2", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(
-        server.listen(port, () => {
-            console.log("Running on port", port)
-        })
-    )
-    .catch((err) => console.log(err))
+// mongoose
+//     .connect("mongodb://localhost:27017/Hw2", {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//     })
+//     .then(
+//         server.listen(port || 5000, () => {
+//             console.log("Running on port", port)
+//         })
+//     )
+//     .catch((err) => console.log(err))
+
+server.listen(port, () =>
+    console.log(`Runing on: ${port}`))
