@@ -1,7 +1,7 @@
 const express = require("express")
 const queryToMongo = require("query-to-mongo")
 const UserSchema = require("./schema")
-const allProjects = require("../projects/ProjectSchema")
+//const allProjects = require("../projects/ProjectSchema")
 const usersRouter = express.Router()
 
 usersRouter.get("/", async (req, res, next) => {
@@ -11,10 +11,8 @@ usersRouter.get("/", async (req, res, next) => {
             .skip(stud.options.skip)
             .limit(stud.options.limit)
             .sort(stud.options.sort)
-        res.send({
-            Filtered: [student],
-            numberOfStudents: student.length
-        })
+        res.send(student)
+
     } catch (error) {
         next(error)
     }
@@ -37,16 +35,16 @@ usersRouter.get("/:id", async (req, res, next) => {
         next("While reading users list a problem occurred!")
     }
 })
-//for students/:studentId/projects
-usersRouter.get("/:id/projects", async (req, res, next) => {
-    try {
-        const projects = await allProjects.find({ studentId: req.params.id })
-        res.send(projects)
-    } catch (error) {
-        next(error)
-    }
+// //for students/:studentId/projects
+// usersRouter.get("/:id/projects", async (req, res, next) => {
+//     try {
+//         const projects = await allProjects.find({ studentId: req.params.id })
+//         res.send(projects)
+//     } catch (error) {
+//         next(error)
+//     }
 
-})
+// })
 usersRouter.post("/", async (req, res, next) => {
     try {
         const StudentEmailCheck = await UserSchema.find({ email: req.body.email.toLowerCase() })

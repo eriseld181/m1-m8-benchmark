@@ -4,7 +4,7 @@ const userRouter = express.Router()
 
 userRouter.get("/", async (req, res) => {
 
-    const user = await db.query(`SELECT * FROM "user"`)
+    const user = await db.query('SELECT * FROM user ')
     res.send(user)
 
 

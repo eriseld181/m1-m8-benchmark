@@ -27,6 +27,7 @@ function App() {
         </a>
         <MyComp
           movie="declared prop1 text"
+          movie2="declared "
         />
 
 

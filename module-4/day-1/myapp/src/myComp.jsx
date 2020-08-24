@@ -23,7 +23,6 @@ class myComp extends React.Component {
     increase = () => {
         this.setState({ negativeCounter: this.state.negativeCounter - 1 })
 
-
     }
 
     render() {
@@ -31,12 +30,12 @@ class myComp extends React.Component {
         //console.log("state: ", this.state)
         return (
             <div style={this.props.style}>
-                <h1 className="title">{this.props.movie}</h1>
+                <h1 className="title" style={{ color: "red", fontSize: "12px", outline: "solid blue 2px" }}>{this.props.movie2}</h1>
                 <button onClick={this.increase}>Increase</button>
                 <button onClick={this.decrease}>decrease</button>
                 <p>My counter from the state is: {this.state.negativeCounter}</p>
 
-            </div>
+            </div >
         )
     }
 }
